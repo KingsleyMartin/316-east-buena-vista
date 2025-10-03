@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Architecture - 316 East Buena Vista Street</title>
+    <meta name="description" content="Detailed architectural analysis of the unique Prairie School and adobe construction fusion at this historic Santa Fe property">
+    <link rel="stylesheet" href="common.css">
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-logo">316 East Buena Vista</div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Overview</a>
+                <a href="history.html">History</a>
+                <a href="architecture.html">Architecture</a>
+                <a href="restoration.html" class="active">Restoration</a>
+				<a href="gardens.html">Gardens</a>
+				<a href="sales.html">Sales History</a>
+                <a href="documents.html">Documents</a>
+            </div>
+        </div>
+    </nav>
+    
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Architectural Analysis</h1>
+            <p class="hero-subtitle">A rare synthesis of Prairie School principles with Southwestern adobe construction, representing Santa Fe's architectural diversity before the Spanish-Pueblo Revival monopolized local building styles.</p>
+        </div>
+    </section>
+    
+    <section class="section">
+        <div class="container">
+            <!-- Interactive Floor Plan -->
+            <div class="interactive-floorplan">
+                <h2 class="floorplan-title">Interactive Floor Plan</h2>
+                <p style="text-align: center; color: #666; margin-bottom: 30px;">Click on rooms to explore architectural details and restoration status</p>
+                <div class="floorplan-container">
+                    <svg class="floorplan-svg" viewBox="0 0 600 400">
+                        <!-- Main House -->
+                        <rect class="room-area" id="living-room" x="50" y="50" width="150" height="100" />
+                        <text class="room-label" x="125" y="100">Living Room</text>
+                        
+                        <rect class="room-area" id="dining-room" x="200" y="50" width="120" height="100" />
+                        <text class="room-label" x="260" y="100">Dining Room</text>
+                        
+                        <rect class="room-area" id="kitchen" x="320" y="50" width="100" height="100" />
+                        <text class="room-label" x="370" y="100">Kitchen</text>
+                        
+                        <rect class="room-area" id="placita" x="150" y="200" width="120" height="80" />
+                        <text class="room-label" x="210" y="240">Placita</text>
+                        
+                        <rect class="room-area" id="master-bedroom" x="50" y="300" width="120" height="80" />
+                        <text class="room-label" x="110" y="340">Master Bedroom</text>
+                        
+                        <rect class="room-area" id="office" x="300" y="200" width="100" height="100" />
+                        <text class="room-label" x="350" y="250">Office/Study</text>
+                        
+                        <!-- Second Floor -->
+                        <rect class="room-area" id="upstairs-hall" x="450" y="50" width="100" height="80" />
+                        <text class="room-label" x="500" y="90">Upstairs Hall</text>
+                        
+                        <rect class="room-area" id="bedroom-2" x="450" y="140" width="80" height="60" />
+                        <text class="room-label" x="490" y="170">Bedroom 2</text>
+                        
+                        <rect class="room-area" id="bedroom-3" x="450" y="210" width="80" height="60" />
+                        <text class="room-label" x="490" y="240">Bedroom 3</text>
+                        
+                        <rect class="room-area" id="unfinished-room" x="450" y="280" width="80" height="60" />
+                        <text class="room-label" x="490" y="310">Unfinished Room</text>
+                    </svg>
+                    
+                    <!-- Room Details Panels -->
+                    <div class="room-details" id="living-room-details">
+                        <h3>Living Room - Prairie Style Elements</h3>
+                        <p><strong>Architectural Features:</strong> Ten-foot ceilings with dark-stained box beams, two alcoves (north windows and east fireplace nook), built-in wooden benches, and prominent fireplace with cut-sandstone mantelpiece.</p>
+                        <p><strong>Restoration Status:</strong> Water damage assessment complete, original woodwork preservation in progress.</p>
+                    </div>
+                    
+                    <div class="room-details" id="dining-room-details">
+                        <h3>Dining Room - Mission Style Interior</h3>
+                        <p><strong>Architectural Features:</strong> Built-in china cupboard with leaded-glass doors, vertical wooden wainscoting strips, original stained glass light fixtures hung from box beams.</p>
+                        <p><strong>Restoration Status:</strong> Original paint samples discovered, color scheme restoration planned.</p>
+                    </div>
+                    
+                    <div class="room-details" id="kitchen-details">
+                        <h3>Kitchen - Service Area Design</h3>
+                        <p><strong>Architectural Features:</strong> High cupboards, metal casement windows over sink, butler's pantry access with glass-doored cupboards, door to placita.</p>
+                        <p><strong>Restoration Status:</strong> Modern appliance integration with historic character preservation.</p>
+                    </div>
+                    
+                    <div class="room-details" id="placita-details">
+                        <h3>Central Placita - Southwestern Tradition</h3>
+                        <p><strong>Architectural Features:</strong> Traditional courtyard design with portal supported by round, stained posts, central focus of J-shaped house configuration.</p>
+                        <p><strong>Restoration Status:</strong> Garden restoration planning in progress, historic irrigation system documentation.</p>
+                    </div>
+                    
+                    <div class="room-details" id="unfinished-room-details">
+                        <h3>Unfinished Room - Construction Evidence</h3>
+                        <p><strong>Architectural Features:</strong> Exposed adobes with cement mortar and wooden framing, providing rare insight into early 20th-century construction techniques.</p>
+                        <p><strong>Restoration Status:</strong> Documentation complete, preservation of construction evidence planned.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Architectural Context -->
+            <div class="cards-grid" style="margin-bottom: 80px;">
+                <div class="card" style="grid-column: 1 / -1;">
+                    <div class="card-header">
+                        <div class="card-meta">Historical Context • Arts & Crafts Movement</div>
+                        <h3 class="card-title">Prairie Style Meets Adobe: A Unique Architectural Fusion</h3>
+                    </div>
+                    <div class="card-content">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+                            <div>
+                                <h4 style="color: #b8860b; margin-bottom: 15px;">Arts & Crafts Movement Context</h4>
+                                <p class="card-description">The Wilson House embodies the Arts and Crafts movement's reaction against industrialization's effects on design. This movement, beginning in 19th-century England, advocated return to simplicity of handwork, elimination of gratuitous decorative detail, and respect for material integrity.</p>
+                                
+                                <p class="card-description">In America, the movement manifested in regional architectural styles rooted in natural environment and local traditions, sharing reverence for natural simplicity and search for genuine American style not tied to European past.</p>
+                                
+                                <h4 style="color: #b8860b; margin-bottom: 15px; margin-top: 25px;">Prairie School Origins</h4>
+                                <p class="card-description">Born in Chicago, the Prairie style represented unique regional expression with horizontal lines said to express flat prairie expanses. <strong>Louis Sullivan</strong> served as spiritual father, <strong>Frank Lloyd Wright</strong> as best-known practitioner. The style spread nationally through magazines and pattern books from 1900 through WWI.</p>
+                            </div>
+                            <div>
+                                <h4 style="color: #b8860b; margin-bottom: 15px;">Southwestern Adaptation</h4>
+                                <p class="card-description"><strong>Henry Trost</strong>, who worked in Chicago, designed notable Prairie examples in the Southwest, including his own home in El Paso and the Spitz House in Albuquerque (both ~1909). No evidence found that Trost was active in Santa Fe, making Wilson's house potentially self-designed.</p>
+                                
+                                <h4 style="color: #b8860b; margin-bottom: 15px; margin-top: 25px;">Mission Style Interior</h4>
+                                <p class="card-description">The term "Mission" came to be loosely applied to Arts and Crafts movement products, including furniture and compatible interior décor styles. Wilson's interior exemplifies this with extensive woodwork, built-in furniture, and craftsman details.</p>
+                                
+                                <h4 style="color: #b8860b; margin-bottom: 15px; margin-top: 25px;">Gustav Stickley Influence</h4>
+                                <p class="card-description">Floor plan shows strong similarity to <strong>Gustav Stickley's Mission prototype</strong> published in <em>The Craftsman</em> magazine, suggesting Wilson may have adapted published plans to local adobe construction methods.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Architectural Features with Detail Zoom -->
+            <div class="zoom-gallery">
+                <h2 class="gallery-title">Architectural Details Gallery</h2>
+                <p style="text-align: center; color: #666; margin-bottom: 30px;">Click images for detailed examination of architectural elements</p>
+                <div class="gallery-grid">
+                    <div class="gallery-item" onclick="openZoom('box-beams')">
+                        Prairie School Box Beam Construction
+                    </div>
+                    <div class="gallery-item" onclick="openZoom('built-ins')">
+                        Mission Style Built-in Furniture
+                    </div>
+                    <div class="gallery-item" onclick="openZoom('windows')">
+                        Window Systems & Casements
+                    </div>
+                    <div class="gallery-item" onclick="openZoom('fireplace')">
+                        Original & Federici Mantlepieces
+                    </div>
+                    <div class="gallery-item" onclick="openZoom('adobe-construction')">
+                        Exposed Adobe Construction
+                    </div>
+                    <div class="gallery-item" onclick="openZoom('woodwork')">
+                        Craftsman Woodwork Details
+                    </div>
+                    <div class="gallery-item" onclick="openZoom('lighting')">
+                        Original Stained Glass Fixtures
+                    </div>
+                    <div class="gallery-item" onclick="openZoom('portal')">
+                        Southwestern Portal Elements
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Construction Techniques -->
+            <div class="construction-techniques">
+                <h2 class="techniques-title">Early 20th Century Adobe Construction Techniques</h2>
+                <p style="text-align: center; color: #666; margin-bottom: 40px;">Detailed analysis of construction methods revealed during restoration</p>
+                
+                <div class="techniques-grid">
+                    <div class="technique-item">
+                        <h4>Adobe Block Construction</h4>
+                        <p>Traditional sun-dried adobe bricks made from local clay, sand, and straw, laid with cement mortar - a transitional technique between traditional mud mortar and modern construction.</p>
+                        <div class="technique-details">
+                            <strong>Restoration Finding:</strong>
+                            Exposed wall in unfinished room shows excellent preservation of original adobe with minimal deterioration despite 115 years of age.
+                        </div>
+                    </div>
+                    
+                    <div class="technique-item">
+                        <h4>Wooden Frame Integration</h4>
+                        <p>Innovative combination of adobe walls with wooden framing for structural support, allowing for larger openings and Prairie School horizontal emphasis.</p>
+                        <div class="technique-details">
+                            <strong>Restoration Finding:</strong>
+                            Wood framing members remain structurally sound, demonstrating quality of original construction and material selection.
+                        </div>
+                    </div>
+                    
+                    <div class="technique-item">
+                        <h4>Cement Stucco Exterior</h4>
+                        <p>Pebbled, gray cement stucco applied over adobe walls - a modern finish that protected the adobe while allowing for Prairie School's clean, undecorated wall surfaces.</p>
+                        <div class="technique-details">
+                            <strong>Restoration Finding:</strong>
+                            Original stucco composition analysis reveals high-quality Portland cement application with excellent adhesion to adobe substrate.
+                        </div>
+                    </div>
+                    
+                    <div class="technique-item">
+                        <h4>Box Beam Ceiling System</h4>
+                        <p>Decorative wooden box beams providing both structural support and Prairie School aesthetic, stained dark to contrast with lighter wall colors.</p>
+                        <div class="technique-details">
+                            <strong>Restoration Finding:</strong>
+                            Original stain and joinery techniques documented, some water damage requires careful restoration with period-appropriate methods.
+                        </div>
+                    </div>
+                    
+                    <div class="technique-item">
+                        <h4>Integrated Built-in Systems</h4>
+                        <p>Extensive built-in furniture and storage designed as integral architectural elements, reflecting Arts & Crafts philosophy of unified design.</p>
+                        <div class="technique-details">
+                            <strong>Restoration Finding:</strong>
+                            Original leaded glass in china cabinet preserved, revealing sophisticated glazing techniques for early 20th century Santa Fe.
+                        </div>
+                    </div>
+                    
+                    <div class="technique-item">
+                        <h4>Window and Door Integration</h4>
+                        <p>Carefully designed openings with concrete sills and lintels, accommodating both casement and double-hung window systems within adobe walls.</p>
+                        <div class="technique-details">
+                            <strong>Restoration Finding:</strong>
+                            Original window hardware and glazing putty composition documented for authentic restoration of damaged units.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Exterior Architecture -->
+            <div class="cards-grid" style="margin-bottom: 80px;">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-meta">Exterior Design • Prairie Elements</div>
+                        <h3 class="card-title">Horizontal Emphasis & Form</h3>
+                    </div>
+                    <div class="card-content">
+                        <h4 style="color: #b8860b; margin-bottom: 15px;">J-Shaped Configuration</h4>
+                        <p class="card-description">Distinctive two-story house with two one-story wings of unequal length extending south, forming J-shape around central <strong>placita</strong> (courtyard). Wings faced on two sides by portal supported by round, stained posts.</p>
+                        
+                        <h4 style="color: #b8860b; margin-bottom: 15px; margin-top: 20px;">Prairie Style Characteristics</h4>
+                        <ul class="features-list">
+                            <li><strong>Low-pitched, hipped roofs</strong> creating horizontal emphasis</li>
+                            <li><strong>Strong overhanging eaves</strong> providing weather protection</li>
+                            <li><strong>Horizontal wooden stripping</strong> marking story division</li>
+                            <li><strong>Flat wall surfaces</strong> without applied decoration</li>
+                            <li><strong>Bands of second-story windows</strong> emphasizing horizontality</li>
+                            <li><strong>Oblong chimney</strong> maintaining horizontal aesthetic</li>
+                        </ul>
+                        
+                        <h4 style="color: #b8860b; margin-bottom: 15px; margin-top: 20px;">Local Adaptation</h4>
+                        <p class="card-description">Placement of one-story wings around placita and portal facing it derive from local Southwestern tradition, creating unique fusion of Prairie and regional elements.</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-meta">Materials & Construction</div>
+                        <h3 class="card-title">Adobe Construction Methods</h3>
+                    </div>
+                    <div class="card-content">
+                        <h4 style="color: #b8860b; margin-bottom: 15px;">Exterior Materials</h4>
+                        <p class="card-description"><strong>Pebbled, gray cement-stuccoed exterior</strong> over adobe walls, free of decoration except for narrow, light-green wooden stripping. This demonstrates versatility of adobe in non-traditional architectural styles.</p>
+                        
+                        <h4 style="color: #b8860b; margin-bottom: 15px; margin-top: 20px;">Window Systems</h4>
+                        <p class="card-description">First-floor windows predominantly <strong>double-hung with twelve small panes</strong> in top section and single pane below, inset in multiples of two or three with concrete sills and lintels.</p>
+                        
+                        <h4 style="color: #b8860b; margin-bottom: 15px; margin-top: 20px;">Structural Elements</h4>
+                        <ul class="features-list">
+                            <li>Partial stone basement on east end</li>
+                            <li>Flagstone walk around house perimeter</li>
+                            <li>Exposed adobes visible in unfinished second-floor room</li>
+                            <li>Cement mortar and wooden framing construction</li>
+                        </ul>
+                        
+                        <h4 style="color: #b8860b; margin-bottom: 15px; margin-top: 20px;">Roof System</h4>
+                        <p class="card-description">Current asbestos-tile roof (suggestive of Mission style) is not original but added at unknown date, replacing original roofing material.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Architectural Significance -->
+            <div class="restoration-tracker" style="margin-top: 80px;">
+                <div class="restoration-header">
+                    <h2 class="restoration-title">Architectural Significance & Preservation Challenges</h2>
+                    <p>Understanding the unique architectural value and current preservation needs</p>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px;">
+                    <div style="background: white; padding: 40px; border-radius: 16px; border: 1px solid #f0f0f0;">
+                        <h3 style="color: #1a1a1a; margin-bottom: 25px;">Historical Importance</h3>
+                        <p style="color: #666; line-height: 1.6; margin-bottom: 20px;">The Wilson House provides rare illustration of adobe's versatility and Santa Fe's architectural diversity in transitional years before Spanish-Pueblo Revival achieved hegemony. It represents important evidence of varied but little understood period.</p>
+                        
+                        <h4 style="color: #b8860b; margin-bottom: 15px; margin-top: 25px;">National Context</h4>
+                        <ul class="features-list">
+                            <li>Unique Prairie School adaptation to Southwestern materials</li>
+                            <li>Demonstrates Arts & Crafts movement's regional variations</li>
+                            <li>Shows transition period before stylistic monopolization</li>
+                            <li>Illustrates architect-builder experimentation in early Santa Fe</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background: white; padding: 40px; border-radius: 16px; border: 1px solid #f0f0f0;">
+                        <h3 style="color: #1a1a1a; margin-bottom: 25px;">Current Condition Assessment</h3>
+                        <p style="color: #666; line-height: 1.6; margin-bottom: 20px;">House has been little altered from original appearance but has suffered serious effects of neglect in recent years, with water damage from roof leaks affecting multiple rooms.</p>
+                        
+                        <h4 style="color: #b8860b; margin-bottom: 15px; margin-top: 25px;">Preservation Priorities</h4>
+                        <ul class="features-list">
+                            <li>Address structural water damage while preserving original adobe</li>
+                            <li>Restore Prairie-style horizontal emphasis elements</li>
+                            <li>Preserve Mission-style interior woodwork and built-ins</li>
+                            <li>Maintain open floor plan and ten-foot ceiling heights</li>
+                            <li>Document construction methods visible in unfinished areas</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div style="background: #f8f9fa; padding: 40px; border-radius: 16px; margin-top: 40px; border-left: 5px solid #b8860b;">
+                    <h3 style="color: #1a1a1a; margin-bottom: 20px;">Restoration Approach: Preserving Architectural Integrity</h3>
+                    <p style="color: #666; line-height: 1.6;">Our restoration philosophy recognizes this house as significant cultural resource both for its associations with the Wilson and Federici families and for its place in Santa Fe architecture history. The goal is preserving its predominant Prairie style, Spanish-Pueblo Revival elements, and Craftsman Mission-style interior as unified response to Arts and Crafts sensibilities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Zoom Modal -->
+    <div class="zoom-modal" id="zoomModal">
+        <div class="zoom-content">
+            <span class="zoom-close" onclick="closeZoom()">&times;</span>
+            <div id="zoomContent">
+                <!-- Content will be dynamically loaded -->
+            </div>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <div class="footer-content">
+            <h3 class="footer-title">316 East Buena Vista Street</h3>
+            <p class="footer-description">A living document of architectural heritage, historic preservation, and the ongoing story of Santa Fe's Prairie-style adobe house.</p>
+            <p style="margin-top: 30px; color: #999; font-size: 0.9em;">© 2025 Historic Preservation Documentation Project</p>
+        </div>
+    </footer>
+    
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+        
+        // Interactive floor plan
+        document.addEventListener('DOMContentLoaded', function() {
+            const rooms = document.querySelectorAll('.room-area');
+            const details = document.querySelectorAll('.room-details');
+            
+            rooms.forEach(room => {
+                room.addEventListener('click', function() {
+                    // Remove previous selections
+                    rooms.forEach(r => r.classList.remove('selected'));
+                    details.forEach(d => d.classList.remove('active'));
+                    
+                    // Add selection to clicked room
+                    this.classList.add('selected');
+                    
+                    // Show corresponding details
+                    const detailsId = this.id + '-details';
+                    const roomDetails = document.getElementById(detailsId);
+                    if (roomDetails) {
+                        roomDetails.classList.add('active');
+                    }
+                });
+            });
+        });
+        
+        // Zoom gallery functionality
+        const zoomDetails = {
+            'box-beams': {
+                title: 'Prairie School Box Beam Construction',
+                content: 'Detailed analysis of the dark-stained wooden box beams that provide both structural support and distinctive Prairie School aesthetic. Original construction shows sophisticated joinery techniques and integration with the ten-foot ceiling system. Water damage assessment reveals areas requiring careful restoration while preserving original craftsmanship.'
+            },
+            'built-ins': {
+                title: 'Mission Style Built-in Furniture',
+                content: 'Extensive built-in furniture system including china cabinet with leaded glass doors, wooden benches, and cedar closets. Represents Arts & Crafts philosophy of integrated design where furniture becomes part of architectural fabric. Original hardware and finishing techniques documented for restoration.'
+            },
+            'windows': {
+                title: 'Window Systems & Casements',
+                content: 'Analysis of original double-hung and casement window systems, showing evolution from first-floor twelve-pane design to second-floor eight-pane casements. Concrete sills and lintels demonstrate innovative integration of modern materials with adobe construction.'
+            },
+            'fireplace': {
+                title: 'Original & Federici Mantlepieces',
+                content: 'Comparison of original simple brick fireplace with cut-sandstone mantelpiece and later Federici-era stone mantelpiece by Rudy Rosales. Both represent different periods in the house history and approaches to interior design adaptation.'
+            },
+            'adobe-construction': {
+                title: 'Exposed Adobe Construction',
+                content: 'Rare view of original construction methods in unfinished second-floor room, showing adobe blocks laid with cement mortar and wooden framing integration. Provides invaluable documentation of early 20th-century transitional building techniques.'
+            },
+            'woodwork': {
+                title: 'Craftsman Woodwork Details',
+                content: 'Detailed examination of original woodwork including wainscoting, trim, and built-in elements. Stain analysis and joinery techniques reveal high quality craftsmanship and authentic Arts & Crafts movement design principles.'
+            },
+            'lighting': {
+                title: 'Original Stained Glass Fixtures',
+                content: 'Square electric fixtures made from stained glass pieces, hung from box beams with black metal chains. Wall sconces with matching metal rods represent early adaptation of electric lighting to Arts & Crafts aesthetic principles.'
+            },
+            'portal': {
+                title: 'Southwestern Portal Elements',
+                content: 'Traditional portal supported by round, stained posts facing the central placita. Demonstrates successful integration of regional Southwestern building traditions with Prairie School horizontal emphasis and material honest expression.'
+            }
+        };
+        
+        function openZoom(detailKey) {
+            const modal = document.getElementById('zoomModal');
+            const content = document.getElementById('zoomContent');
+            const detail = zoomDetails[detailKey];
+            
+            if (detail) {
+                content.innerHTML = `
+                    <h3 style="color: #b8860b; margin-bottom: 20px; font-size: 1.8em;">${detail.title}</h3>
+                    <div style="background: #f8f9fa; padding: 30px; border-radius: 12px; margin-bottom: 20px; min-height: 300px; display: flex; align-items: center; justify-content: center; color: #666;">
+                        High-resolution architectural detail image would appear here
+                    </div>
+                    <p style="color: #666; line-height: 1.6; font-size: 1.1em;">${detail.content}</p>
+                `;
+                modal.classList.add('active');
+            }
+        }
+        
+        function closeZoom() {
+            document.getElementById('zoomModal').classList.remove('active');
+        }
+        
+        // Close zoom modal when clicking outside
+        document.getElementById('zoomModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeZoom();
+            }
+        });
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            const modal = document.getElementById('zoomModal');
+            if (modal.classList.contains('active') && e.key === 'Escape') {
+                closeZoom();
+            }
+        });
+        
+        // Lazy loading for future images
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        if (img.dataset.src) {
+                            img.src = img.dataset.src;
+                            img.classList.remove('lazy');
+                            imageObserver.unobserve(img);
+                        }
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+</html>

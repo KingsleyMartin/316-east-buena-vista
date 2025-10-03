@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History - 316 East Buena Vista Street</title>
+    <meta name="description" content="Detailed history of notable residents and families who shaped the legacy of this historic Santa Fe property">
+    <link rel="stylesheet" href="common.css">
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-logo">316 East Buena Vista</div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Overview</a>
+                <a href="history.html" class="active">History</a>
+                <a href="architecture.html">Architecture</a>
+                <a href="restoration.html">Restoration</a>
+				<a href="gardens.html">Gardens</a>
+                <a href="sales.html">Sales History</a>
+                <a href="documents.html">Documents</a>
+            </div>
+        </div>
+    </nav>
+    
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Detailed History</h1>
+            <p class="hero-subtitle">The lives and contributions of the remarkable people who called 316 East Buena Vista home, from territorial New Mexico to modern preservation efforts.</p>
+        </div>
+    </section>
+    
+    <section class="section">
+        <div class="container">
+            <!-- Timeline Navigation -->
+            <div class="timeline-navigation">
+                <h3 class="timeline-nav-title">Navigate Through History</h3>
+                <div class="timeline-nav-buttons">
+                    <button class="timeline-nav-btn" onclick="scrollToEra('wilson-era')">Wilson Era (1910-1954)</button>
+                    <button class="timeline-nav-btn" onclick="scrollToEra('federici-era')">Federici Era (1958-1980)</button>
+                    <button class="timeline-nav-btn" onclick="scrollToEra('rental-period')">Rental (1980-1995)</button>
+                    <button class="timeline-nav-btn" onclick="scrollToEra('kent-love-era')">Revival (1995-2008)</button>
+					<button class="timeline-nav-btn" onclick="scrollToEra('waldron-shortes-era')">Deferred Maintenance (2008-2025)</button>
+                    <button class="timeline-nav-btn active" onclick="scrollToEra('current-era')">Current Era (2025-)</button>
+                </div>
+            </div>
+            
+            <!-- Photo Comparison Section -->
+            <div class="photo-comparison">
+                <h2 class="comparison-title">Then vs Now: Wilson Era to Present</h2>
+                <div class="comparison-container" id="comparisonContainer">
+					<div class="comparison-wrapper">
+						<div class="comparison-image comparison-before">
+							<!-- Your 1920s image or content -->
+						</div>
+						<div class="comparison-image comparison-after" id="comparisonAfter">
+							<!-- Your 2025 image or content -->
+						</div>
+						<div class="comparison-slider" id="comparisonSlider"></div>
+						<div class="comparison-labels">
+							<div class="comparison-label">1910s - Wilson Family Era</div>
+							<div class="comparison-label">2025 - Current</div>
+						</div>
+					</div>
+				</div>
+                <p style="text-align: center; margin-top: 20px; color: #666; font-style: italic;">Drag the slider to compare the house during the Wilson era with its current state during restoration</p>
+            </div>
+            
+			<!-- Wilson Era -->
+            <div id="wilson-era">
+                <div class="cards-grid" style="margin-bottom: 80px;">
+                    <div class="card" style="grid-column: 1 / -1;">
+                        <div class="card-header">
+                            <div class="card-meta">1910 - 1954 • Founding Era</div>
+                            <h3 class="card-title">Francis Cushman Wilson & Charlotte Parker Wilson</h3>
+                        </div>
+                        <div class="card-content">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+                                <div>
+                                    <h4 style="color: #b8860b; margin-bottom: 15px; font-size: 1.3em;">Francis Cushman Wilson (1876-1952)</h4>
+                                    <p class="card-description"><strong>Education & Early Career:</strong> Born in Winchester, Massachusetts, son of Harvard-trained lawyer and Civil War major. Harvard Class of 1898 (volunteered for Spanish-American War before graduation), LL.B. from Columbia University Law School (now George Washington University) in 1903.</p>
+                                    
+                                    <p class="card-description"><strong>New Mexico Arrival:</strong> Came to New Mexico in 1907 as young lawyer from Washington, D.C. First non-resident of the territory to serve as clerk of the First Judicial District, replacing A.M. Bergere.</p>
+                                    
+                                    <p class="card-description"><strong>Legal Career:</strong> U.S. attorney for <span class="glossary-term" onclick="showGlossary('pueblo-indians')">Pueblo Indians</span> (1909), private partnership with Richard H. Hanna until 1912. President of New Mexico State Bar Association (1912), admitted to U.S. Supreme Court bar. Later partnered with former NM Supreme Court Justice John C. Watson.</p>
+                                    
+                                    <p class="card-description"><strong>Specializations:</strong> <span class="glossary-term" onclick="showGlossary('water-law')">Water law</span> authority, expert on Pueblo land questions, public domain, and interstate compacts. Published numerous articles in law journals and popular magazines. Represented clients including Bronson Cutting, Mary Austin, and the White sisters.</p>
+                                </div>
+                                <div>
+                                    <h4 style="color: #b8860b; margin-bottom: 15px; font-size: 1.3em;">Charlotte Lansing Parker Wilson (d. 1954)</h4>
+                                    <p class="card-description"><strong>Heritage:</strong> Descended from old Virginia family including Continental Congress member (1784-1785) and two governors. Married Francis in 1902.</p>
+                                    
+                                    <p class="card-description"><strong>Civic Leadership:</strong> Before public welfare era, helped establish programs for underprivileged children and aged, which evolved into State Welfare Department. Served as president of State Board of Public Welfare, chairman of Santa Fe Woman's Club.</p>
+                                    
+                                    <p class="card-description"><strong>Political Activity:</strong> Active in Woman's Republican Club, chairman of governor's inaugural balls, ran for State Senate in 1936.</p>
+                                    
+                                    <p class="card-description"><strong>DAR Leadership:</strong> Rose to national office in <span class="glossary-term" onclick="showGlossary('dar')">Daughters of the American Revolution</span> - local and state regent, vice president general of fortieth Continental Congress (1931), first national DAR officer from New Mexico. Instrumental in selection and adoption of current New Mexico state flag (1925), designed by Harry Mera.</p>
+                                </div>
+                            </div>
+							
+							<!-- Photo Gallery -->
+							<div class="photo-gallery">
+								<h2 class="gallery-title">History Gallery</h2>
+								<p style="text-align: center; color: #666; margin-bottom: 30px;">316 Buena Vista through time</p>
+								
+								<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px;">
+									<div style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+										<img src="photos/conrad_wilson_houses_1915.jpg" 
+											 style="width: 100%; height: 250px; object-fit: cover;" 
+											 alt="Conrad and Wilson houses - 1915">
+										<div style="padding: 15px;">
+											<div style="font-weight: 600; color: #1a1a1a; margin-bottom: 5px; font-size: 1em;">Conrad and Wilson Houses - 1915</div>
+											<div style="color: #666; font-size: 0.9em; line-height: 1.4;">Early photograph showing the Wilson house alongside the neighboring Conrad residence</div>
+										</div>
+									</div>
+									
+									<div style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+										<img src="photos/house-1918.jpg" 
+											 style="width: 100%; height: 250px; object-fit: cover;" 
+											 alt="House - 1918">
+										<div style="padding: 15px;">
+											<div style="font-weight: 600; color: #1a1a1a; margin-bottom: 5px; font-size: 1em;">House - 1918</div>
+											<div style="color: #666; font-size: 0.9em; line-height: 1.4;">Earliest comprehensive view of the completed Wilson house showing Prairie-style elements</div>
+										</div>
+									</div>
+									
+									<div style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+										<img src="photos/FrancisWilson.jpg" 
+											 style="width: 100%; height: 250px; object-fit: cover;" 
+											 alt="Francis Wilson in living room - 1918">
+										<div style="padding: 15px;">
+											<div style="font-weight: 600; color: #1a1a1a; margin-bottom: 5px; font-size: 1em;">Francis Wilson in Living Room - 1918</div>
+											<div style="color: #666; font-size: 0.9em; line-height: 1.4;">Interior view showing Francis Wilson and the original Mission-style furnishings</div>
+										</div>
+									</div>
+									
+									<!-- Placeholder for additional photos -->
+									<div style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+										<img src="photos/house-1995.jpg" 
+											 style="width: 100%; height: 250px; object-fit: cover;" 
+											 alt="First restoration - Kent-Love-Cohen Era">
+										<div style="padding: 15px;">
+											<div style="font-weight: 600; color: #1a1a1a; margin-bottom: 5px; font-size: 1em;">Front of house</div>
+											<div style="color: #666; font-size: 0.9em; line-height: 1.4;">Front of house showing entrance steps on left side- 1995</div>
+										</div>
+									</div>
+									
+									<div style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+										<img src="photos/house-damage-1995.jpg" 
+											 style="width: 100%; height: 250px; object-fit: cover;" 
+											 alt="Extensive water damage">
+										<div style="padding: 15px;">
+											<div style="font-weight: 600; color: #1a1a1a; margin-bottom: 5px; font-size: 1em;">Bedroom ceiling damage - 1995</div>
+											<div style="color: #666; font-size: 0.9em; line-height: 1.4;">Water leaks in the roof cause extensive damage to bedroom ceiling</div>
+										</div>
+									</div>
+									
+									<div style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+										<img src="photos/house-restoration-1995.jpg" 
+											 style="width: 100%; height: 250px; object-fit: cover;" 
+											 alt="Restoration - living and dining rooms">
+										<div style="padding: 15px;">
+											<div style="font-weight: 600; color: #1a1a1a; margin-bottom: 5px; font-size: 1em;">Living and dining rooms - 1995</div>
+											<div style="color: #666; font-size: 0.9em; line-height: 1.4;">Living room with exposed brick fireplace and walled off kitchen.</div>
+										</div>
+									</div>
+									
+									<div style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+										<div style="width: 100%; height: 250px; background: linear-gradient(135deg, #f8f9fa, #e9ecef); display: flex; align-items: center; justify-content: center; color: #666; font-style: italic; text-align: center; padding: 20px;">
+											Kent-Love restoration work and garden revival
+										</div>
+										<div style="padding: 15px;">
+											<div style="font-weight: 600; color: #1a1a1a; margin-bottom: 5px; font-size: 1em;">1995 Garden Revival</div>
+											<div style="color: #666; font-size: 0.9em; line-height: 1.4;">David Kent & Margaret Love's restoration of the historic gardens and well system</div>
+										</div>
+									</div>
+									
+									<div style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+										<div style="width: 100%; height: 250px; background: linear-gradient(135deg, #f8f9fa, #e9ecef); display: flex; align-items: center; justify-content: center; color: #666; font-style: italic; text-align: center; padding: 20px;">
+											Current restoration progress photos
+										</div>
+										<div style="padding: 15px;">
+											<div style="font-weight: 600; color: #1a1a1a; margin-bottom: 5px; font-size: 1em;">2025 Restoration Work</div>
+											<div style="color: #666; font-size: 0.9em; line-height: 1.4;">Current comprehensive restoration addressing structural issues and preserving historic character</div>
+										</div>
+									</div>
+									
+									<div style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+										<div style="width: 100%; height: 250px; background: linear-gradient(135deg, #f8f9fa, #e9ecef); display: flex; align-items: center; justify-content: center; color: #666; font-style: italic; text-align: center; padding: 20px;">
+											Architectural detail close-ups or discovery photos
+										</div>
+										<div style="padding: 15px;">
+											<div style="font-weight: 600; color: #1a1a1a; margin-bottom: 5px; font-size: 1em;">Architectural Details</div>
+											<div style="color: #666; font-size: 0.9em; line-height: 1.4;">Close-up views of Prairie-style elements and construction discoveries during restoration</div>
+										</div>
+									</div>
+								</div>
+							</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Wilson Business Ventures -->
+            <div class="cards-grid" style="margin-bottom: 80px;">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-meta">1920s-1940s • Business Ventures</div>
+                        <h3 class="card-title">Development & Oil Enterprises</h3>
+                    </div>
+                    <div class="card-content">
+                        <h4 style="color: #b8860b; margin-bottom: 15px;">Real Estate Development</h4>
+                        <p class="card-description">Secretary-treasurer of <strong>John Evans' Flying Heart Development Corporation</strong>, which purchased the Don Diego addition. Major partner in <strong>De Vargas Development Corporation</strong> with the White sisters, using their financial resources and his expertise to acquire and subdivide the extensive De Vargas grant in southeast Santa Fe.</p>
+                        
+                        <h4 style="color: #b8860b; margin-bottom: 15px; margin-top: 25px;">Street Naming</h4>
+                        <p class="card-description">Wilson was responsible for naming <strong>Camino Rancheros</strong>, <strong>Camino Corrales</strong>, and renaming their part of College Street as <strong>"Santa Fe Trail."</strong></p>
+                        
+                        <h4 style="color: #b8860b; margin-bottom: 15px; margin-top: 25px;">Oil Business (1938-1952)</h4>
+                        <p class="card-description">Entered oil business after striking large quantities in Lea County. Organized <strong>Wilson Oil Company</strong> as president, became recognized expert in petroleum geology and management. Appointed to executive committee of <strong>Independent Oil Association of America</strong>.</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-meta">Community Impact • Philanthropy</div>
+                        <h3 class="card-title">Cultural & Educational Legacy</h3>
+                    </div>
+                    <div class="card-content">
+                        <h4 style="color: #b8860b; margin-bottom: 15px;">Land Donations</h4>
+                        <p class="card-description">Francis Wilson and the White sisters donated large tracts for the <strong>Laboratory of Anthropology</strong>, <strong>Museum of International Folk Art</strong>, and <strong>United States Regional Park Service building</strong>.</p>
+                        
+                        <h4 style="color: #b8860b; margin-bottom: 15px; margin-top: 25px;">Cultural Organizations</h4>
+                        <p class="card-description">Francis: Organizer of the Fiesta, president of Community Theater Association (organized by Mary Austin, 1919), incorporator and trustee of Indian Arts Fund, managing board member of School of American Research.</p>
+                        
+                        <p class="card-description">Charlotte: Organizer of Library Association, founder and chairman of Women's Museum Board, trustee of Laboratory of Anthropology.</p>
+                        
+                        <h4 style="color: #b8860b; margin-bottom: 15px; margin-top: 25px;">Professional Legacy</h4>
+                        <p class="card-description">Wilson's law library and bookcases given to University of New Mexico to become nucleus of Law School library. His extensive professional papers (inventory occupies nearly 100 pages) now at State Records Center and Archives.</p>
+                    </div>
+                </div>
+            </div>
+                        
+            <!-- Timeline -->
+            <div class="timeline-container">
+                <div class="timeline-track"></div>
+                
+                <div class="timeline-item" id="federici-era">
+                    <div class="timeline-marker">
+                        <div class="timeline-year">1958</div>
+                    </div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Federici Family Era Begins</h3>
+                        <p class="timeline-description">Justice William R. Federici and family purchase the property, continuing its legacy of legal profession residents. Most significant change was commissioning Rudy Rosales to build large stone living room mantelpiece.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <div class="timeline-year">1977</div>
+                    </div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Supreme Court Justice</h3>
+                        <p class="timeline-description">William Federici appointed to New Mexico Supreme Court (served until 1986, Chief Justice 1984-1985), maintaining the house's connection to legal leadership in the state.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" id="rental-period">
+                    <div class="timeline-marker">
+                        <div class="timeline-year">1980</div>
+                    </div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Rental Property Period</h3>
+                        <p class="timeline-description">House becomes rental property, housing St. John's College students for a period. Beginning of deferred maintenance issues that would later challenge structural integrity.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" id="kent-love-cohen-era">
+                    <div class="timeline-marker">
+                        <div class="timeline-year">1995</div>
+                    </div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">House and Garden Revival</h3>
+                        <p class="timeline-description">David Kent & Margaret Love (Berkeley Mills furniture makers) restore the house, discover and revive neglected gardens, restore historic well system achieving 15-20 GPM flow with modern irrigation controllers. The gardens are maintained by the Cohen's and featured in magazines and garden walks.</p>
+                    </div>
+                </div>
+				
+				<div class="timeline-item" id="waldron-shortes-era">
+                    <div class="timeline-marker">
+                        <div class="timeline-year">2008</div>
+                    </div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Deferred Maintenance Period</h3>
+                        <p class="timeline-description">During the period of ownership by Waldron ans Shortes from 2008 to 2025, the house and gardens suffer from deferred maintenance.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" id="current-era">
+                    <div class="timeline-marker">
+                        <div class="timeline-year">2025</div>
+                    </div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Comprehensive Restoration</h3>
+                        <p class="timeline-description">Kingsley Martin & Catherine Murray begin comprehensive restoration of the house and gardens while preserving architectural integrity and documenting the process for future preservation efforts.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Current Era Section -->
+            <div class="restoration-tracker" style="margin-top: 80px;">
+                <div class="restoration-header">
+                    <h2 class="restoration-title">Current Era: Comprehensive Restoration</h2>
+                    <p><strong>Kingsley Martin & Catherine Murray • September 2025 - Present</strong></p>
+                </div>
+                
+                <div style="background: white; padding: 40px; border-radius: 16px; margin-top: 40px;">
+                    <h3 style="color: #1a1a1a; margin-bottom: 25px;">Restoration Philosophy</h3>
+                    <p style="color: #666; line-height: 1.6; margin-bottom: 25px;">Our approach honors both the Prairie School architectural principles that Francis Wilson embodied in this unique adobe house and the rich layers of history added by each subsequent family. Rather than attempting to return the house to a single "original" moment, we're preserving the accumulated heritage while addressing critical structural and safety needs.</p>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 30px;">
+                        <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; border-left: 4px solid #b8860b;">
+                            <h4 style="color: #1a1a1a; margin-bottom: 15px;">Structural Priorities</h4>
+                            <p style="color: #666; font-size: 0.95em;">Address water damage, roof integrity, and foundation stability while preserving original adobe construction methods</p>
+                        </div>
+                        <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; border-left: 4px solid #b8860b;">
+                            <h4 style="color: #1a1a1a; margin-bottom: 15px;">Historic Preservation</h4>
+                            <p style="color: #666; font-size: 0.95em;">Maintain Prairie-style elements, Mission interior features, and architectural integrity while improving functionality</p>
+                        </div>
+                        <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; border-left: 4px solid #b8860b;">
+                            <h4 style="color: #1a1a1a; margin-bottom: 15px;">Garden Restoration</h4>
+                            <p style="color: #666; font-size: 0.95em;">Revive Charlotte Wilson's terraced garden design using historic sluiceway principles with modern efficiency</p>
+                        </div>
+                        <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; border-left: 4px solid #b8860b;">
+                            <h4 style="color: #1a1a1a; margin-bottom: 15px;">Documentation</h4>
+                            <p style="color: #666; font-size: 0.95em;">Create comprehensive record of restoration process, discoveries, and preservation techniques for future caretakers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Social Sharing -->
+            <div class="social-sharing">
+                <a href="#" class="share-btn" onclick="shareContent('facebook')">Share on Facebook</a>
+                <a href="#" class="share-btn" onclick="shareContent('twitter')">Share on Twitter</a>
+                <a href="#" class="share-btn" onclick="shareContent('linkedin')">Share on LinkedIn</a>
+                <a href="#" class="share-btn" onclick="shareContent('email')">Share via Email</a>
+            </div>
+            
+            <!-- Related Content -->
+            <div class="related-content">
+                <h3 class="related-title">Related Historical Content</h3>
+                <div class="related-links">
+                    <a href="architecture.html" class="related-link">
+                        <h4>Architectural Context</h4>
+                        <p>Learn how the Wilson's Prairie-style vision was executed in adobe construction</p>
+                    </a>
+                    <a href="documents.html#historical" class="related-link">
+                        <h4>Historical Documents</h4>
+                        <p>Browse the 1993 Historic Santa Fe Foundation research and archival materials</p>
+                    </a>
+                    <a href="restoration.html#discoveries" class="related-link">
+                        <h4>Restoration Discoveries</h4>
+                        <p>Follow real-time findings that reveal new aspects of the property's history</p>
+                    </a>
+                    <a href="sales.html" class="related-link">
+                        <h4>Ownership Transitions</h4>
+                        <p>Review the property's sales history and market evolution over time</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Glossary Overlay -->
+    <div class="glossary-overlay" id="glossaryOverlay" onclick="hideGlossary()"></div>
+    <div class="glossary-popup" id="glossaryPopup">
+        <h3 id="glossaryTitle" style="color: #b8860b; margin-bottom: 15px;"></h3>
+        <p id="glossaryDefinition" style="color: #666; line-height: 1.6; margin-bottom: 20px;"></p>
+        <button onclick="hideGlossary()" style="background: #b8860b; color: white; border: none; padding: 8px 20px; border-radius: 6px; cursor: pointer;">Close</button>
+    </div>
+    
+    <footer class="footer">
+        <div class="footer-content">
+            <h3 class="footer-title">316 East Buena Vista Street</h3>
+            <p class="footer-description">A living document of architectural heritage, historic preservation, and the ongoing story of Santa Fe's Prairie-style adobe house.</p>
+            <p style="margin-top: 30px; color: #999; font-size: 0.9em;">© 2025 Historic Preservation Documentation Project</p>
+        </div>
+    </footer>
+    
+    <script>
+	function toggleMenu() {
+		const navLinks = document.getElementById('navLinks');
+		navLinks.classList.toggle('active');
+	}
+
+	// Timeline navigation
+	function scrollToEra(eraId) {
+		document.getElementById(eraId).scrollIntoView({ behavior: 'smooth' });
+		
+		// Update active button
+		document.querySelectorAll('.timeline-nav-btn').forEach(btn => btn.classList.remove('active'));
+		event.target.classList.add('active');
+	}
+
+	// Photo Comparison Class
+	class PhotoComparison {
+		constructor(container) {
+			this.container = container;
+			this.slider = container.querySelector('#comparisonSlider');
+			this.afterImage = container.querySelector('#comparisonAfter');
+			this.isDragging = false;
+			this.currentPosition = 50; // Start at 50%
+			
+			this.init();
+		}
+		
+		init() {
+			// Mouse events
+			this.slider.addEventListener('mousedown', this.startDrag.bind(this));
+			document.addEventListener('mousemove', this.onDrag.bind(this));
+			document.addEventListener('mouseup', this.stopDrag.bind(this));
+			
+			// Touch events for mobile
+			this.slider.addEventListener('touchstart', this.startDrag.bind(this), { passive: false });
+			document.addEventListener('touchmove', this.onDrag.bind(this), { passive: false });
+			document.addEventListener('touchend', this.stopDrag.bind(this));
+			
+			// Click anywhere on container to move slider
+			this.container.addEventListener('click', this.onContainerClick.bind(this));
+			
+			// Prevent default drag behavior
+			this.container.addEventListener('dragstart', (e) => e.preventDefault());
+			this.slider.addEventListener('selectstart', (e) => e.preventDefault());
+			
+			// Set initial position
+			this.updatePosition(this.currentPosition);
+		}
+		
+		startDrag(e) {
+			this.isDragging = true;
+			this.container.style.cursor = 'ew-resize';
+			document.body.style.userSelect = 'none';
+			e.preventDefault();
+		}
+		
+		stopDrag() {
+			this.isDragging = false;
+			this.container.style.cursor = 'ew-resize';
+			document.body.style.userSelect = '';
+		}
+		
+		onDrag(e) {
+			if (!this.isDragging) return;
+			
+			e.preventDefault();
+			const clientX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+			this.updatePositionFromEvent(clientX);
+		}
+		
+		onContainerClick(e) {
+			if (this.isDragging) return;
+			
+			// Don't move slider if clicking on the slider itself
+			if (e.target === this.slider || this.slider.contains(e.target)) return;
+			
+			const clientX = e.type.includes('touch') ? e.changedTouches[0].clientX : e.clientX;
+			this.updatePositionFromEvent(clientX);
+		}
+		
+		updatePositionFromEvent(clientX) {
+			const rect = this.container.getBoundingClientRect();
+			const x = clientX - rect.left;
+			const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100));
+			this.updatePosition(percentage);
+		}
+		
+		updatePosition(percentage) {
+			this.currentPosition = percentage;
+			
+			// Update slider position
+			this.slider.style.left = `${percentage}%`;
+			
+			// Update clip path for after image (reveals from left)
+			this.afterImage.style.clipPath = `polygon(0 0, ${percentage}% 0, ${percentage}% 100%, 0 100%)`;
+		}
+	}
+
+	// Timeline item animation on scroll
+	const timelineObserver = new IntersectionObserver((entries) => {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				entry.target.classList.add('visible');
+			}
+		});
+	}, { threshold: 0.2 });
+
+	document.addEventListener('DOMContentLoaded', function() {
+		// Initialize timeline animation
+		document.querySelectorAll('.timeline-item').forEach((item) => {
+			timelineObserver.observe(item);
+		});
+		
+		// Initialize photo comparison
+		const container = document.getElementById('comparisonContainer');
+		if (container) {
+			new PhotoComparison(container);
+		}
+	});
+
+	// Glossary functionality
+	const glossaryTerms = {
+		'pueblo-indians': {
+			title: 'Pueblo Indians',
+			definition: 'Native American peoples of the southwestern United States, living in compact, permanent settlements. Wilson specialized in legal issues related to Pueblo land rights and sovereignty during the territorial period.'
+		},
+		'water-law': {
+			title: 'Water Law',
+			definition: 'The branch of law dealing with the ownership, control, and use of water as a resource. In the arid Southwest, water rights were critical to development and remain highly regulated today.'
+		},
+		'dar': {
+			title: 'Daughters of the American Revolution',
+			definition: 'A lineage-based membership service organization for women directly descended from a person involved in United States independence efforts. Charlotte Wilson rose to national leadership in this organization.'
+		}
+	};
+
+	function showGlossary(termId) {
+		const term = glossaryTerms[termId];
+		if (term) {
+			document.getElementById('glossaryTitle').textContent = term.title;
+			document.getElementById('glossaryDefinition').textContent = term.definition;
+			document.getElementById('glossaryOverlay').classList.add('active');
+			document.getElementById('glossaryPopup').classList.add('active');
+		}
+	}
+
+	function hideGlossary() {
+		document.getElementById('glossaryOverlay').classList.remove('active');
+		document.getElementById('glossaryPopup').classList.remove('active');
+	}
+
+	// Social sharing
+	function shareContent(platform) {
+		const url = encodeURIComponent(window.location.href);
+		const title = encodeURIComponent('History of 316 East Buena Vista Street - Historic Prairie Adobe House');
+		
+		switch(platform) {
+			case 'facebook':
+				window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+				break;
+			case 'twitter':
+				window.open(`https://twitter.com/intent/tweet?url=${url}&text=${title}`, '_blank');
+				break;
+			case 'linkedin':
+				window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, '_blank');
+				break;
+			case 'email':
+				window.location.href = `mailto:?subject=${title}&body=Check out this fascinating history: ${url}`;
+				break;
+		}
+	}
+	</script>
+</body>
+</html>
