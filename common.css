@@ -502,7 +502,7 @@ body {
 .status-planned { background: #f3e5f5; color: #7b1fa2; }
 .status-thriving { background: #e8f5e8; color: #2e7d32; }
 .status-mature { background: #e3f2fd; color: #1976d2; }
-.status-declining { background: #fff3e0; color: #f57c00; }
+.status-declining { background: #ffe6e6; color: #ff6666; }
 
 /* Footer */
 .footer {
