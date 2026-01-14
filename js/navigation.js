@@ -12,6 +12,7 @@ const navConfig = {
         { href: 'history.html', label: 'History' },
         { href: 'restoration.html', label: 'Restoration' },
         { href: 'house.html', label: 'House' },
+        { href: 'featured.html', label: 'Featured' },
         { 
             href: 'gardens.html', 
             label: 'Gardens',
