@@ -12,7 +12,17 @@ const navConfig = {
         { href: 'history.html', label: 'History' },
         { href: 'restoration.html', label: 'Restoration' },
         { href: 'house.html', label: 'House' },
-        { href: 'gardens.html', label: 'Gardens' },
+        { 
+            href: 'gardens.html', 
+            label: 'Gardens',
+            submenu: [
+                { href: 'garden-history.html', label: 'Garden History & Evolution' },
+                { href: 'plant-inventory.html', label: 'Plant Inventory & Assessment' },
+                { href: 'water-systems.html', label: 'Well & Water Rights' },
+                { href: 'flowering-calendar.html', label: 'Flowering Calendar' },
+                { href: 'garden-plan (no install costs).html', label: 'Garden Plan' }
+            ]
+        },
         { href: 'sales.html', label: 'Sales History' },
         { href: 'documents.html', label: 'Documents' }
     ]
@@ -29,12 +39,37 @@ function getCurrentPage() {
 }
 
 /**
+ * Checks if current page is in a submenu
+ */
+function isInSubmenu(item, currentPage) {
+    if (!item.submenu) return false;
+    return item.submenu.some(subItem => subItem.href === currentPage);
+}
+
+/**
  * Generates the navigation HTML
  */
 function generateNavHTML(currentPage) {
     const navLinks = navConfig.items
         .map(item => {
-            const isActive = currentPage === item.href;
+            const isActive = currentPage === item.href || isInSubmenu(item, currentPage);
+            
+            if (item.submenu) {
+                const submenuHTML = item.submenu
+                    .map(subItem => {
+                        const isSubActive = currentPage === subItem.href;
+                        return `<a href="${subItem.href}" class="submenu-item${isSubActive ? ' active' : ''}">${subItem.label}</a>`;
+                    })
+                    .join('\n                    ');
+                
+                return `<div class="nav-item-with-submenu">
+                    <a href="${item.href}"${isActive ? ' class="active"' : ''}>${item.label}</a>
+                    <div class="submenu">
+                        ${submenuHTML}
+                    </div>
+                </div>`;
+            }
+            
             return `<a href="${item.href}"${isActive ? ' class="active"' : ''}>${item.label}</a>`;
         })
         .join('\n                ');

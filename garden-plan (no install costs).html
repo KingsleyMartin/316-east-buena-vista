@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irrigation System Design Plan - 316 East Buena Vista Street, Santa Fe</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --adobe-terracotta: #C2703E;
+            --adobe-sand: #E8DCC4;
+            --adobe-cream: #F5F0E6;
+            --sage-green: #7A8B6E;
+            --turquoise: #5B9A8B;
+            --deep-brown: #3D2B1F;
+            --warm-gray: #6B5B4F;
+            --water-blue: #4A90A4;
+            --highlight: #D4A574;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            background: var(--adobe-cream);
+            color: var(--deep-brown);
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 30px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--adobe-terracotta) 0%, var(--deep-brown) 100%);
+            padding: 50px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            color: white;
+            margin-bottom: 10px;
+            position: relative;
+            letter-spacing: 1px;
+        }
+
+        header .subtitle {
+            color: var(--adobe-sand);
+            font-size: 1.1rem;
+            font-weight: 300;
+            position: relative;
+        }
+
+        header .property-info {
+            margin-top: 20px;
+            color: rgba(255,255,255,0.85);
+            font-size: 0.95rem;
+            position: relative;
+        }
+
+        .section {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 15px rgba(61, 43, 31, 0.08);
+            border-left: 4px solid var(--adobe-terracotta);
+        }
+
+        .section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--adobe-terracotta);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--adobe-sand);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section h2 .number {
+            background: var(--adobe-terracotta);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            color: var(--warm-gray);
+            margin: 25px 0 15px 0;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: var(--warm-gray);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.9rem;
+        }
+
+        thead {
+            background: linear-gradient(135deg, var(--sage-green) 0%, var(--turquoise) 100%);
+        }
+
+        th {
+            padding: 12px 10px;
+            text-align: left;
+            color: white;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        td {
+            padding: 10px;
+            border-bottom: 1px solid var(--adobe-sand);
+            color: var(--deep-brown);
+        }
+
+        tr:hover {
+            background: rgba(194, 112, 62, 0.05);
+        }
+
+        .totals-row {
+            background: var(--adobe-sand) !important;
+            font-weight: 600;
+        }
+
+        .totals-row td {
+            border-bottom: none;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, var(--water-blue) 0%, var(--turquoise) 100%);
+            color: white;
+            padding: 20px 25px;
+            border-radius: 6px;
+            margin: 20px 0;
+        }
+
+        .highlight-box strong {
+            font-size: 1.3rem;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .cost-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .cost-card {
+            background: var(--adobe-cream);
+            border-radius: 8px;
+            padding: 25px;
+            border: 2px solid var(--adobe-sand);
+        }
+
+        .cost-card.premium {
+            border-color: var(--adobe-terracotta);
+            background: linear-gradient(135deg, rgba(194, 112, 62, 0.1) 0%, rgba(245, 240, 230, 1) 100%);
+        }
+
+        .cost-card h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: var(--deep-brown);
+            margin-bottom: 15px;
+        }
+
+        .cost-card .total {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--adobe-terracotta);
+            margin-top: 15px;
+        }
+
+        .cost-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .cost-card li {
+            padding: 5px 0;
+            color: var(--warm-gray);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .badge-drip {
+            background: var(--turquoise);
+            color: white;
+        }
+
+        .badge-spray {
+            background: var(--water-blue);
+            color: white;
+        }
+
+        .badge-rotor {
+            background: var(--sage-green);
+            color: white;
+        }
+
+        .water-gauge {
+            background: var(--adobe-sand);
+            border-radius: 30px;
+            height: 30px;
+            margin: 15px 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .water-gauge-fill {
+            background: linear-gradient(90deg, var(--water-blue) 0%, var(--turquoise) 100%);
+            height: 100%;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 15px;
+            color: white;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .month-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .month-card {
+            background: var(--adobe-cream);
+            padding: 12px;
+            border-radius: 6px;
+            text-align: center;
+            border: 1px solid var(--adobe-sand);
+        }
+
+        .month-card .month-name {
+            font-weight: 600;
+            color: var(--deep-brown);
+            font-size: 0.85rem;
+        }
+
+        .month-card .gallons {
+            color: var(--water-blue);
+            font-weight: 700;
+            font-size: 1rem;
+            margin-top: 5px;
+        }
+
+        .notes-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .notes-list li {
+            padding: 10px 0 10px 30px;
+            position: relative;
+            border-bottom: 1px solid var(--adobe-sand);
+        }
+
+        .notes-list li::before {
+            content: '◆';
+            position: absolute;
+            left: 0;
+            color: var(--adobe-terracotta);
+        }
+
+        .notes-list li:last-child {
+            border-bottom: none;
+        }
+
+        .maintenance-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .maintenance-card {
+            background: var(--adobe-cream);
+            padding: 20px;
+            border-radius: 6px;
+            border-left: 3px solid var(--sage-green);
+        }
+
+        .maintenance-card h4 {
+            color: var(--sage-green);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .maintenance-card ul {
+            list-style: disc;
+            padding-left: 20px;
+            color: var(--warm-gray);
+            font-size: 0.9rem;
+        }
+
+        .maintenance-card li {
+            margin-bottom: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--warm-gray);
+            font-size: 0.9rem;
+            border-top: 2px solid var(--adobe-sand);
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .cost-comparison {
+                grid-template-columns: 1fr;
+            }
+            .month-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .maintenance-grid {
+                grid-template-columns: 1fr;
+            }
+            header h1 {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media print {
+            .section {
+                break-inside: avoid;
+            }
+            header {
+                background: var(--adobe-terracotta) !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Irrigation System Design Plan</h1>
+        <div class="subtitle">Full Water Right Utilization Strategy</div>
+        <div class="property-info">
+            316 East Buena Vista Street, Santa Fe, New Mexico<br>
+            Historic 1910 Prairie-Style Adobe Residence
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Section 1: Executive Summary -->
+        <section class="section">
+            <h2><span class="number">1</span>Executive Summary</h2>
+            <p>This irrigation system design provides comprehensive coverage for 24,209 square feet across 12 distinct zones at the historic 316 East Buena Vista Street property. The system is engineered to fully utilize the 3 acre-foot annual water allocation (977,553 gallons), supporting lush, vibrant estate gardens appropriate for this significant Santa Fe landmark.</p>
+            <p>The design incorporates a hybrid approach: efficient drip irrigation for trees, shrubs, roses, and vegetables, combined with spray systems for lawn and ground cover areas requiring uniform coverage. A smart controller with weather-based ET adjustment optimizes watering schedules while a cistern-based pressurization system ensures reliable water delivery from the existing well.</p>
+            <p>Total projected annual water usage is <strong>950,000 gallons (97% of allocation)</strong>, maintaining a small buffer while maximizing the property's horticultural potential.</p>
+        </section>
+
+        <!-- Property Zone Map -->
+        <section class="section">
+            <h2><span class="number">✦</span>Property Zone Map</h2>
+            <p>The following aerial view shows all 12 irrigation zones (outlined in blue dashed lines), tree locations (green circles), the main irrigation line running north-south along the western property boundary (solid blue line), and cistern locations. Areas marked "no irrigation" include parking areas and established native shrubs that do not require supplemental watering.</p>
+            <div style="text-align: center; margin: 20px 0;">
+                <img src="plans/zones..png" alt="Property Zone Map - 316 East Buena Vista Street" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 20px rgba(61, 43, 31, 0.15);">
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-top: 20px; justify-content: center;">
+                <div style="display: flex; align-items: center; gap: 8px;"><span style="width: 20px; height: 3px; background: #3B82F6; display: inline-block;"></span> Main Irrigation Line</div>
+                <div style="display: flex; align-items: center; gap: 8px;"><span style="width: 20px; height: 20px; border: 2px dashed #3B82F6; display: inline-block;"></span> Irrigation Zone</div>
+                <div style="display: flex; align-items: center; gap: 8px;"><span style="width: 20px; height: 20px; border: 2px solid #22C55E; border-radius: 50%; display: inline-block;"></span> Tree Location</div>
+                <div style="display: flex; align-items: center; gap: 8px;"><span style="width: 20px; height: 20px; background: #C2703E; border-radius: 3px; display: inline-block;"></span> Cistern</div>
+                <div style="display: flex; align-items: center; gap: 8px;"><span style="width: 20px; height: 20px; border: 2px dashed #EF4444; display: inline-block;"></span> No Irrigation</div>
+            </div>
+        </section>
+
+        <!-- Section 2: Water Budget -->
+        <section class="section">
+            <h2><span class="number">2</span>Water Budget</h2>
+            
+            <div class="highlight-box">
+                <strong>Annual Water Allocation: 977,553 gallons (3 acre-feet)</strong>
+                Target Usage: 950,000 gallons/year (97% utilization)
+            </div>
+
+            <p>The water budget distributes usage across the irrigation season (March through November) with peak allocation during the hot summer months of June, July, and August. Winter months (December-February) require minimal irrigation, limited to supplemental tree watering via stand pipes.</p>
+
+            <div class="water-gauge">
+                <div class="water-gauge-fill" style="width: 97%;">950,000 gal (97%)</div>
+            </div>
+
+            <h3>Monthly Water Distribution</h3>
+            <div class="month-grid">
+                <div class="month-card">
+                    <div class="month-name">January</div>
+                    <div class="gallons">8,000</div>
+                </div>
+                <div class="month-card">
+                    <div class="month-name">February</div>
+                    <div class="gallons">8,000</div>
+                </div>
+                <div class="month-card">
+                    <div class="month-name">March</div>
+                    <div class="gallons">45,000</div>
+                </div>
+                <div class="month-card">
+                    <div class="month-name">April</div>
+                    <div class="gallons">75,000</div>
+                </div>
+                <div class="month-card">
+                    <div class="month-name">May</div>
+                    <div class="gallons">110,000</div>
+                </div>
+                <div class="month-card">
+                    <div class="month-name">June</div>
+                    <div class="gallons">145,000</div>
+                </div>
+                <div class="month-card">
+                    <div class="month-name">July</div>
+                    <div class="gallons">155,000</div>
+                </div>
+                <div class="month-card">
+                    <div class="month-name">August</div>
+                    <div class="gallons">150,000</div>
+                </div>
+                <div class="month-card">
+                    <div class="month-name">September</div>
+                    <div class="gallons">105,000</div>
+                </div>
+                <div class="month-card">
+                    <div class="month-name">October</div>
+                    <div class="gallons">75,000</div>
+                </div>
+                <div class="month-card">
+                    <div class="month-name">November</div>
+                    <div class="gallons">45,000</div>
+                </div>
+                <div class="month-card">
+                    <div class="month-name">December</div>
+                    <div class="gallons">8,000</div>
+                </div>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Season</th>
+                        <th>Months</th>
+                        <th>Monthly Avg</th>
+                        <th>Season Total</th>
+                        <th>% of Annual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Winter (Dormant)</td>
+                        <td>Dec - Feb</td>
+                        <td>8,000 gal</td>
+                        <td>24,000 gal</td>
+                        <td>2.5%</td>
+                    </tr>
+                    <tr>
+                        <td>Spring (Startup)</td>
+                        <td>Mar - May</td>
+                        <td>76,667 gal</td>
+                        <td>230,000 gal</td>
+                        <td>24.2%</td>
+                    </tr>
+                    <tr>
+                        <td>Summer (Peak)</td>
+                        <td>Jun - Aug</td>
+                        <td>150,000 gal</td>
+                        <td>450,000 gal</td>
+                        <td>47.4%</td>
+                    </tr>
+                    <tr>
+                        <td>Fall (Reduction)</td>
+                        <td>Sep - Nov</td>
+                        <td>75,000 gal</td>
+                        <td>225,000 gal</td>
+                        <td>23.7%</td>
+                    </tr>
+                    <tr class="totals-row">
+                        <td colspan="3"><strong>Annual Total</strong></td>
+                        <td><strong>950,000 gal</strong></td>
+                        <td><strong>97%</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Section 3: Zone Irrigation Table -->
+        <section class="section">
+            <h2><span class="number">3</span>Zone Irrigation Table</h2>
+            <p>Each zone is configured with appropriate irrigation methods and flow rates to achieve full water allocation while maintaining plant health. Drip systems serve trees, shrubs, roses, and vegetables; spray systems cover lawn and ground cover areas.</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Zone</th>
+                        <th>Type</th>
+                        <th>Area (sq ft)</th>
+                        <th>Method</th>
+                        <th>GPM</th>
+                        <th>Peak Monthly (gal)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Z1 - Trees & Grasses NW</td>
+                        <td>Grasses/Shrubs</td>
+                        <td>2,809</td>
+                        <td><span class="badge badge-drip">Drip</span></td>
+                        <td>4.5</td>
+                        <td>16,200</td>
+                    </tr>
+                    <tr>
+                        <td>Z2 - Roses</td>
+                        <td>Roses</td>
+                        <td>150</td>
+                        <td><span class="badge badge-drip">Drip</span></td>
+                        <td>0.8</td>
+                        <td>2,880</td>
+                    </tr>
+                    <tr>
+                        <td>Z3 - Roses</td>
+                        <td>Roses</td>
+                        <td>391</td>
+                        <td><span class="badge badge-drip">Drip</span></td>
+                        <td>1.5</td>
+                        <td>5,400</td>
+                    </tr>
+                    <tr>
+                        <td>Z4 - Formal Garden</td>
+                        <td>Flowers</td>
+                        <td>1,615</td>
+                        <td><span class="badge badge-drip">Drip</span></td>
+                        <td>3.5</td>
+                        <td>12,600</td>
+                    </tr>
+                    <tr>
+                        <td>Z5 - Flowers SW</td>
+                        <td>Flowers</td>
+                        <td>739</td>
+                        <td><span class="badge badge-drip">Drip</span></td>
+                        <td>2.0</td>
+                        <td>7,200</td>
+                    </tr>
+                    <tr>
+                        <td>Z6 - Vegetables</td>
+                        <td>Vegetables</td>
+                        <td>805</td>
+                        <td><span class="badge badge-drip">Drip</span></td>
+                        <td>3.0</td>
+                        <td>10,800</td>
+                    </tr>
+                    <tr>
+                        <td>Z7 - Trees & Grasses NE</td>
+                        <td>Grasses/Shrubs</td>
+                        <td>2,637</td>
+                        <td><span class="badge badge-drip">Drip</span></td>
+                        <td>4.2</td>
+                        <td>15,120</td>
+                    </tr>
+                    <tr>
+                        <td>Z8 - Lawn</td>
+                        <td>Lawn</td>
+                        <td>1,921</td>
+                        <td><span class="badge badge-rotor">Rotor</span></td>
+                        <td>8.0</td>
+                        <td>28,800</td>
+                    </tr>
+                    <tr>
+                        <td>Z9 - Shrubs & Bushes</td>
+                        <td>Shrubs/Bushes</td>
+                        <td>879</td>
+                        <td><span class="badge badge-drip">Drip</span></td>
+                        <td>2.0</td>
+                        <td>7,200</td>
+                    </tr>
+                    <tr>
+                        <td>Z10 - Ground Cover</td>
+                        <td>Ground Cover</td>
+                        <td>1,292</td>
+                        <td><span class="badge badge-spray">Spray</span></td>
+                        <td>5.0</td>
+                        <td>18,000</td>
+                    </tr>
+                    <tr>
+                        <td>Z10 - Trees & Plantings</td>
+                        <td>Grasses/Shrubs</td>
+                        <td>5,399</td>
+                        <td><span class="badge badge-drip">Drip</span></td>
+                        <td>8.5</td>
+                        <td>30,600</td>
+                    </tr>
+                    <tr>
+                        <td>Z11 - Pond Flowers/Grasses</td>
+                        <td>Flowers</td>
+                        <td>520</td>
+                        <td><span class="badge badge-drip">Drip</span></td>
+                        <td>1.5</td>
+                        <td>5,400</td>
+                    </tr>
+                    <tr class="totals-row">
+                        <td colspan="2"><strong>TOTALS</strong></td>
+                        <td><strong>19,157</strong></td>
+                        <td>—</td>
+                        <td><strong>44.5</strong></td>
+                        <td><strong>160,200</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p><em>Note: GPM values represent zone flow rates during active watering cycles. Peak monthly gallons based on summer schedule (June-August). Tree supplemental watering (26 trees) via stand pipes adds approximately 5,200 gallons monthly during winter.</em></p>
+        </section>
+
+        <!-- Section 4: Watering Schedule Table -->
+        <section class="section">
+            <h2><span class="number">4</span>Watering Schedule Table</h2>
+            <p>This schedule supports vigorous plant growth with adequate watering frequency. The smart controller adjusts automatically based on ET (evapotranspiration) data and weather conditions.</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Zone Type</th>
+                        <th>Summer Frequency</th>
+                        <th>Summer Duration</th>
+                        <th>Spring/Fall Adjustment</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Lawn (Z8)</strong></td>
+                        <td>Daily</td>
+                        <td>20 min (2 cycles × 10 min)</td>
+                        <td>Every other day, 15 min</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ground Cover (Z10)</strong></td>
+                        <td>Daily</td>
+                        <td>15 min</td>
+                        <td>Every other day, 12 min</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Roses (Z2, Z3)</strong></td>
+                        <td>Every 2 days</td>
+                        <td>45 min</td>
+                        <td>Every 3 days, 30 min</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Flowers (Z4, Z5, Z11)</strong></td>
+                        <td>Every 2 days</td>
+                        <td>40 min</td>
+                        <td>Every 3 days, 30 min</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Vegetables (Z6)</strong></td>
+                        <td>Daily</td>
+                        <td>30 min (morning)</td>
+                        <td>Every other day, 25 min</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Trees & Grasses (Z1, Z7, Z10)</strong></td>
+                        <td>Every 2-3 days</td>
+                        <td>60 min (deep soak)</td>
+                        <td>Every 4 days, 45 min</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Shrubs & Bushes (Z9)</strong></td>
+                        <td>Every 3 days</td>
+                        <td>45 min</td>
+                        <td>Every 5 days, 35 min</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Trees (Stand Pipes - Winter)</strong></td>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                        <td>Monthly, 20 gal/tree when unfrozen</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p><em>Optimal watering time: Early morning (5:00-8:00 AM) to minimize evaporation and fungal issues. Cycle-soak method used for lawn to prevent runoff on adobe soils.</em></p>
+        </section>
+
+        <!-- Section 5: Main Line Configuration -->
+        <section class="section">
+            <h2><span class="number">5</span>Main Line Configuration</h2>
+            <p>The irrigation system utilizes a pressurized supply from the cistern system, which receives water from the well house. The main line configuration consists of:</p>
+            
+            <ul class="notes-list">
+                <li><strong>Main Line 1 (West):</strong> 1.25" Schedule 40 PVC, 279 linear feet, running from the cistern/pump house along the western property boundary, serving zones Z1, Z2, Z3, Z4, Z5, and Z6.</li>
+                <li><strong>Branch Lines (6 total):</strong> 1" Schedule 40 PVC laterals extending from Main Line 1:
+                    <ul style="margin-top: 10px; margin-left: 20px;">
+                        <li>Branch 1: 22 ft to Z7 (Trees & Grasses NE)</li>
+                        <li>Branch 2: 17 ft to Z8 (Lawn)</li>
+                        <li>Branch 3: 17 ft to Z9 (Shrubs & Bushes)</li>
+                        <li>Branch 4: 20 ft to Z10 (Ground Cover)</li>
+                        <li>Branch 5: 41 ft to Z10 (Trees & Plantings)</li>
+                        <li>Branch 6: 15 ft to Z11 (Pond Area)</li>
+                    </ul>
+                </li>
+                <li><strong>Total Line Length:</strong> 411 feet of main and branch lines</li>
+                <li><strong>Pressure Source:</strong> 1-2 HP pump from dual cisterns (10,000 gallon total capacity) providing 45-55 PSI system pressure</li>
+                <li><strong>Valve Manifolds:</strong> Two manifold locations for simplified maintenance—one near the cistern (6 valves) and one at the northeast garden area (6 valves)</li>
+            </ul>
+        </section>
+
+        <!-- Section 6: Equipment List with Costs -->
+        <section class="section">
+            <h2><span class="number">6</span>Equipment List with Costs</h2>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Quantity</th>
+                        <th>Unit Cost</th>
+                        <th>Total Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="4" style="background: var(--adobe-sand); font-weight: 600;">Cistern & Pump System</td>
+                    </tr>
+                    <tr>
+                        <td>Cistern Tanks (5,000 gallon polyethylene)</td>
+                        <td>2</td>
+                        <td>$4,500</td>
+                        <td>$9,000</td>
+                    </tr>
+                    <tr>
+                        <td>Irrigation Pump (1.5 HP, stainless steel)</td>
+                        <td>1</td>
+                        <td>$850</td>
+                        <td>$850</td>
+                    </tr>
+                    <tr>
+                        <td>Pressure Tank (20 gallon)</td>
+                        <td>1</td>
+                        <td>$350</td>
+                        <td>$350</td>
+                    </tr>
+                    <tr>
+                        <td>Pump Controller & Pressure Switch</td>
+                        <td>1</td>
+                        <td>$275</td>
+                        <td>$275</td>
+                    </tr>
+                    <tr>
+                        <td>Float Valve Assembly (cistern fill)</td>
+                        <td>1</td>
+                        <td>$125</td>
+                        <td>$125</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="background: var(--adobe-sand); font-weight: 600;">Controller & Sensors</td>
+                    </tr>
+                    <tr>
+                        <td>Smart Controller (12-zone, WiFi, ET-based)</td>
+                        <td>1</td>
+                        <td>$350</td>
+                        <td>$350</td>
+                    </tr>
+                    <tr>
+                        <td>Rain Sensor (wireless)</td>
+                        <td>1</td>
+                        <td>$85</td>
+                        <td>$85</td>
+                    </tr>
+                    <tr>
+                        <td>Soil Moisture Sensors</td>
+                        <td>4</td>
+                        <td>$95</td>
+                        <td>$380</td>
+                    </tr>
+                    <tr>
+                        <td>Flow Meter (for monitoring)</td>
+                        <td>1</td>
+                        <td>$185</td>
+                        <td>$185</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="background: var(--adobe-sand); font-weight: 600;">Valves & Main Line</td>
+                    </tr>
+                    <tr>
+                        <td>Electric Zone Valves (1")</td>
+                        <td>12</td>
+                        <td>$45</td>
+                        <td>$540</td>
+                    </tr>
+                    <tr>
+                        <td>Master Valve (1.25")</td>
+                        <td>1</td>
+                        <td>$85</td>
+                        <td>$85</td>
+                    </tr>
+                    <tr>
+                        <td>Valve Boxes (standard)</td>
+                        <td>6</td>
+                        <td>$35</td>
+                        <td>$210</td>
+                    </tr>
+                    <tr>
+                        <td>Valve Boxes (jumbo, for manifolds)</td>
+                        <td>2</td>
+                        <td>$65</td>
+                        <td>$130</td>
+                    </tr>
+                    <tr>
+                        <td>PVC Pipe 1.25" Sch 40 (per 10 ft)</td>
+                        <td>30</td>
+                        <td>$18</td>
+                        <td>$540</td>
+                    </tr>
+                    <tr>
+                        <td>PVC Pipe 1" Sch 40 (per 10 ft)</td>
+                        <td>20</td>
+                        <td>$12</td>
+                        <td>$240</td>
+                    </tr>
+                    <tr>
+                        <td>PVC Fittings (elbows, tees, couplings)</td>
+                        <td>1 lot</td>
+                        <td>$350</td>
+                        <td>$350</td>
+                    </tr>
+                    <tr>
+                        <td>Backflow Preventer (PVB)</td>
+                        <td>1</td>
+                        <td>$175</td>
+                        <td>$175</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="background: var(--adobe-sand); font-weight: 600;">Drip System Components</td>
+                    </tr>
+                    <tr>
+                        <td>Drip Tubing 1/2" (500 ft rolls)</td>
+                        <td>6</td>
+                        <td>$65</td>
+                        <td>$390</td>
+                    </tr>
+                    <tr>
+                        <td>Drip Emitters 1 GPH (pressure-compensating)</td>
+                        <td>400</td>
+                        <td>$0.85</td>
+                        <td>$340</td>
+                    </tr>
+                    <tr>
+                        <td>Drip Emitters 2 GPH (pressure-compensating)</td>
+                        <td>200</td>
+                        <td>$0.95</td>
+                        <td>$190</td>
+                    </tr>
+                    <tr>
+                        <td>Multi-outlet Emitters (trees, 6-port)</td>
+                        <td>26</td>
+                        <td>$12</td>
+                        <td>$312</td>
+                    </tr>
+                    <tr>
+                        <td>Drip Line Pressure Regulators (25 PSI)</td>
+                        <td>10</td>
+                        <td>$18</td>
+                        <td>$180</td>
+                    </tr>
+                    <tr>
+                        <td>Drip Line Filters (Y-type)</td>
+                        <td>10</td>
+                        <td>$22</td>
+                        <td>$220</td>
+                    </tr>
+                    <tr>
+                        <td>Drip Fittings & Connectors</td>
+                        <td>1 lot</td>
+                        <td>$275</td>
+                        <td>$275</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="background: var(--adobe-sand); font-weight: 600;">Spray System Components</td>
+                    </tr>
+                    <tr>
+                        <td>Pop-up Spray Heads (4", adjustable)</td>
+                        <td>12</td>
+                        <td>$14</td>
+                        <td>$168</td>
+                    </tr>
+                    <tr>
+                        <td>Rotor Heads (4", gear-driven)</td>
+                        <td>6</td>
+                        <td>$28</td>
+                        <td>$168</td>
+                    </tr>
+                    <tr>
+                        <td>Spray Head Nozzles (matched precipitation)</td>
+                        <td>18</td>
+                        <td>$4</td>
+                        <td>$72</td>
+                    </tr>
+                    <tr>
+                        <td>Funny Pipe 1/2" (per 100 ft)</td>
+                        <td>3</td>
+                        <td>$45</td>
+                        <td>$135</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="background: var(--adobe-sand); font-weight: 600;">Winter Watering & Misc</td>
+                    </tr>
+                    <tr>
+                        <td>Stand Pipes with Quick Connects (trees)</td>
+                        <td>8</td>
+                        <td>$85</td>
+                        <td>$680</td>
+                    </tr>
+                    <tr>
+                        <td>Quick Connect Hose Fittings</td>
+                        <td>12</td>
+                        <td>$15</td>
+                        <td>$180</td>
+                    </tr>
+                    <tr>
+                        <td>Control Wire (14 gauge, per 500 ft)</td>
+                        <td>2</td>
+                        <td>$85</td>
+                        <td>$170</td>
+                    </tr>
+                    <tr>
+                        <td>Wire Connectors (waterproof)</td>
+                        <td>50</td>
+                        <td>$2</td>
+                        <td>$100</td>
+                    </tr>
+                    <tr>
+                        <td>Pipe Thread Sealant, PVC Cement, Primer</td>
+                        <td>1 lot</td>
+                        <td>$75</td>
+                        <td>$75</td>
+                    </tr>
+                    <tr class="totals-row">
+                        <td colspan="3"><strong>EQUIPMENT SUBTOTAL</strong></td>
+                        <td><strong>$17,125</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Section 7: Landscaping Materials & Plants Cost -->
+        <section class="section">
+            <h2><span class="number">7</span>Landscaping Materials & Plants Cost</h2>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Zone</th>
+                        <th>Quantity</th>
+                        <th>Unit Cost</th>
+                        <th>Total Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="5" style="background: var(--adobe-sand); font-weight: 600;">Seeding & Lawn Establishment</td>
+                    </tr>
+                    <tr>
+                        <td>Buffalo Grass Seed (per lb, covers ~200 sq ft)</td>
+                        <td>Z2</td>
+                        <td>2 lbs</td>
+                        <td>$85</td>
+                        <td>$170</td>
+                    </tr>
+                    <tr>
+                        <td>Soil Amendment (compost, per cubic yard)</td>
+                        <td>Z3</td>
+                        <td>3 cu yd</td>
+                        <td>$65</td>
+                        <td>$195</td>
+                    </tr>
+                    <tr>
+                        <td>Tall Fescue Seed Blend (per lb)</td>
+                        <td>Z3</td>
+                        <td>15 lbs</td>
+                        <td>$8</td>
+                        <td>$120</td>
+                    </tr>
+                    <tr>
+                        <td>Starter Fertilizer (lawn, 50 lb bag)</td>
+                        <td>Z2, Z3</td>
+                        <td>2</td>
+                        <td>$45</td>
+                        <td>$90</td>
+                    </tr>
+                    <tr>
+                        <td>Straw Mulch (bales, for seed protection)</td>
+                        <td>Z2, Z3</td>
+                        <td>6</td>
+                        <td>$12</td>
+                        <td>$72</td>
+                    </tr>
+                    <tr>
+                        <td colspan="5" style="background: var(--adobe-sand); font-weight: 600;">Ground Cover & Formal Garden</td>
+                    </tr>
+                    <tr>
+                        <td>Vinca minor (periwinkle) 4" pots</td>
+                        <td>Z4</td>
+                        <td>200</td>
+                        <td>$4.50</td>
+                        <td>$900</td>
+                    </tr>
+                    <tr>
+                        <td>Ground Cover Soil Prep (amendment + mulch)</td>
+                        <td>Z4</td>
+                        <td>1 lot</td>
+                        <td>$350</td>
+                        <td>$350</td>
+                    </tr>
+                    <tr>
+                        <td colspan="5" style="background: var(--adobe-sand); font-weight: 600;">Rose Gardens</td>
+                    </tr>
+                    <tr>
+                        <td>Hybrid Tea Roses (premium grafted, 2-gal)</td>
+                        <td>Z5, Z6</td>
+                        <td>24</td>
+                        <td>$45</td>
+                        <td>$1,080</td>
+                    </tr>
+                    <tr>
+                        <td>Shrub Roses (David Austin type, 3-gal)</td>
+                        <td>Z5, Z6</td>
+                        <td>12</td>
+                        <td>$65</td>
+                        <td>$780</td>
+                    </tr>
+                    <tr>
+                        <td>Climbing Roses (5-gal)</td>
+                        <td>Z5, Z6</td>
+                        <td>6</td>
+                        <td>$55</td>
+                        <td>$330</td>
+                    </tr>
+                    <tr>
+                        <td>Rose Planting Mix (per cubic yard)</td>
+                        <td>Z5, Z6</td>
+                        <td>4 cu yd</td>
+                        <td>$75</td>
+                        <td>$300</td>
+                    </tr>
+                    <tr>
+                        <td>Rose Mulch (cedar, per cubic yard)</td>
+                        <td>Z5, Z6</td>
+                        <td>3 cu yd</td>
+                        <td>$55</td>
+                        <td>$165</td>
+                    </tr>
+                    <tr>
+                        <td colspan="5" style="background: var(--adobe-sand); font-weight: 600;">Raised Beds (Z11 - Pond Area)</td>
+                    </tr>
+                    <tr>
+                        <td>Dry-Stack Stone (Santa Fe fieldstone, per ton)</td>
+                        <td>Z11</td>
+                        <td>4 tons</td>
+                        <td>$425</td>
+                        <td>$1,700</td>
+                    </tr>
+                    <tr>
+                        <td>Raised Bed Soil Mix (per cubic yard)</td>
+                        <td>Z11</td>
+                        <td>6 cu yd</td>
+                        <td>$85</td>
+                        <td>$510</td>
+                    </tr>
+                    <tr>
+                        <td>Ornamental Grasses (1-gal, assorted)</td>
+                        <td>Z11</td>
+                        <td>24</td>
+                        <td>$18</td>
+                        <td>$432</td>
+                    </tr>
+                    <tr>
+                        <td>Perennial Flowers (1-gal, pond-side varieties)</td>
+                        <td>Z11</td>
+                        <td>36</td>
+                        <td>$14</td>
+                        <td>$504</td>
+                    </tr>
+                    <tr>
+                        <td colspan="5" style="background: var(--adobe-sand); font-weight: 600;">South Pond Construction</td>
+                    </tr>
+                    <tr>
+                        <td>Gunite Spa Demolition & Removal</td>
+                        <td>South Pond</td>
+                        <td>1</td>
+                        <td>$3,500</td>
+                        <td>$3,500</td>
+                    </tr>
+                    <tr>
+                        <td>EPDM Pond Liner (45 mil, per sq ft)</td>
+                        <td>South Pond</td>
+                        <td>200 sq ft</td>
+                        <td>$1.85</td>
+                        <td>$370</td>
+                    </tr>
+                    <tr>
+                        <td>Pond Underlayment (per sq ft)</td>
+                        <td>South Pond</td>
+                        <td>200 sq ft</td>
+                        <td>$0.45</td>
+                        <td>$90</td>
+                    </tr>
+                    <tr>
+                        <td>Pond Pump (1,500 GPH, energy efficient)</td>
+                        <td>South Pond</td>
+                        <td>1</td>
+                        <td>$285</td>
+                        <td>$285</td>
+                    </tr>
+                    <tr>
+                        <td>Biological Filter System</td>
+                        <td>South Pond</td>
+                        <td>1</td>
+                        <td>$425</td>
+                        <td>$425</td>
+                    </tr>
+                    <tr>
+                        <td>Hardy Water Lilies</td>
+                        <td>South Pond</td>
+                        <td>6</td>
+                        <td>$45</td>
+                        <td>$270</td>
+                    </tr>
+                    <tr>
+                        <td>Aquatic Plants (marginal, assorted)</td>
+                        <td>South Pond</td>
+                        <td>18</td>
+                        <td>$18</td>
+                        <td>$324</td>
+                    </tr>
+                    <tr>
+                        <td>Pond Edge Stone (flagstone, per ton)</td>
+                        <td>South Pond</td>
+                        <td>2 tons</td>
+                        <td>$375</td>
+                        <td>$750</td>
+                    </tr>
+                    <tr>
+                        <td>River Rock (decorative, per ton)</td>
+                        <td>South Pond</td>
+                        <td>1 ton</td>
+                        <td>$225</td>
+                        <td>$225</td>
+                    </tr>
+                    <tr class="totals-row">
+                        <td colspan="4"><strong>LANDSCAPING MATERIALS SUBTOTAL</strong></td>
+                        <td><strong>$13,937</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Section 9: Installation Notes -->
+        <section class="section">
+            <h2><span class="number">9</span>Installation Notes</h2>
+            <p>Key considerations for this historic Santa Fe property:</p>
+            
+            <ul class="notes-list">
+                <li><strong>Historic Adobe Protection:</strong> All trenching must maintain minimum 3-foot clearance from adobe foundation walls. Use hand digging within 6 feet of structures to prevent vibration damage. Coordinate with any historic preservation requirements.</li>
+                <li><strong>High Desert Climate Adaptation:</strong> At 7,000' elevation, UV exposure degrades exposed materials quickly. Use UV-stabilized drip tubing and bury main lines minimum 12" deep to prevent freeze damage. All above-ground components must be UV-rated.</li>
+                <li><strong>Freeze Protection:</strong> Install manual drain valves at all low points in the system. Main lines and branch lines must slope toward drain points. Backflow preventer requires insulated cover for winter. System winterization typically required by mid-October.</li>
+                <li><strong>Stand Pipes for Winter Tree Watering:</strong> Eight stand pipes with quick-connect fittings distributed throughout tree zones allow manual deep watering during winter months when the main system is winterized. Each stand pipe connects to the pressurized cistern supply independently.</li>
+                <li><strong>Cistern System Integration:</strong> Dual 5,000-gallon cisterns provide 10,000 gallons total storage capacity. Coordinate pump sizing with well recovery rate. Install low-water cutoff switch to protect pump. Float valves on cistern fills must be calibrated to maintain adequate reserve for irrigation cycles. Plumb cisterns in parallel for balanced draw-down.</li>
+                <li><strong>Soil Considerations:</strong> Santa Fe's adobe clay soils have low infiltration rates. Use cycle-soak watering for spray zones (multiple short cycles vs. one long cycle) to prevent runoff. Drip systems naturally accommodate slow infiltration.</li>
+                <li><strong>Charlotte Wilson Garden Heritage:</strong> The historic terraced garden design should be preserved. Route irrigation lines along existing bed edges and pathways. Avoid disturbing established heritage fruit trees—use surface drip rings rather than trenching near root zones.</li>
+                <li><strong>Electrical Requirements:</strong> Pump requires dedicated 240V/20A circuit. Smart controller needs 120V outlet in protected location. Consider adding GFCI-protected outdoor outlets near pond pump location.</li>
+            </ul>
+        </section>
+
+        <!-- Section 10: Maintenance Schedule -->
+        <section class="section">
+            <h2><span class="number">10</span>Maintenance Schedule</h2>
+            
+            <div class="maintenance-grid">
+                <div class="maintenance-card">
+                    <h4>🌸 Spring (March - May)</h4>
+                    <ul>
+                        <li>System startup: Check all valves, flush lines</li>
+                        <li>Inspect and clean drip emitters</li>
+                        <li>Replace damaged spray heads</li>
+                        <li>Verify controller programming and sensor function</li>
+                        <li>Test rain sensor and soil moisture sensors</li>
+                        <li>Check pump pressure and cistern fill rate</li>
+                        <li>Adjust spray head patterns for new growth</li>
+                        <li>Apply pre-emergent to prevent weeds in drip zones</li>
+                    </ul>
+                </div>
+                <div class="maintenance-card">
+                    <h4>☀️ Summer (June - August)</h4>
+                    <ul>
+                        <li>Weekly visual inspection of all zones</li>
+                        <li>Monitor water usage via flow meter</li>
+                        <li>Adjust controller for monsoon season (July-Aug)</li>
+                        <li>Check for clogged emitters monthly</li>
+                        <li>Inspect drip tubing for UV damage or leaks</li>
+                        <li>Verify even coverage in spray zones</li>
+                        <li>Clean filters monthly during peak use</li>
+                        <li>Monitor cistern levels during high-demand periods</li>
+                    </ul>
+                </div>
+                <div class="maintenance-card">
+                    <h4>🍂 Fall (September - November)</h4>
+                    <ul>
+                        <li>Gradually reduce watering frequency</li>
+                        <li>Deep water trees before winterization</li>
+                        <li>Clean and inspect all filters</li>
+                        <li>Winterize system before hard freeze (mid-October)</li>
+                        <li>Blow out lines with compressed air</li>
+                        <li>Drain backflow preventer, install cover</li>
+                        <li>Disconnect and store hoses</li>
+                        <li>Verify stand pipes operational for winter use</li>
+                    </ul>
+                </div>
+                <div class="maintenance-card">
+                    <h4>❄️ Winter (December - February)</h4>
+                    <ul>
+                        <li><strong>Monthly tree watering via stand pipes</strong></li>
+                        <li>Water trees 15-20 gallons each when ground unfrozen</li>
+                        <li>Focus on evergreens and newly planted trees</li>
+                        <li>Check insulation on backflow preventer</li>
+                        <li>Inspect pump house for freeze protection</li>
+                        <li>Plan any system modifications for spring</li>
+                        <li>Order replacement parts as needed</li>
+                        <li>Review water usage records from prior year</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="highlight-box" style="margin-top: 25px;">
+                <strong>Winter Tree Watering Protocol</strong>
+                26 trees require supplemental watering monthly during dormant season. Using stand pipes with quick-connects, apply 20 gallons per tree (520 gallons total) on a day when soil is unfrozen and temperatures are above 40°F. Focus especially on evergreens and any trees planted within the last 3 years.
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p><strong>Irrigation System Design Plan</strong><br>
+        316 East Buena Vista Street, Santa Fe, New Mexico<br>
+        Generated January 2026 | Full Water Right Utilization: 950,000 gallons/year (97% of 3 acre-feet)</p>
+    </footer>
+</body>
+</html>
