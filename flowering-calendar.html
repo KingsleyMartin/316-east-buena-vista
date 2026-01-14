@@ -1,0 +1,1514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flowering Plant Calendar - 316 East Buena Vista Street</title>
+    <meta name="description" content="Seasonal flowering calendar and plant guide for the historic gardens at 316 East Buena Vista Street, Santa Fe">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    
+    <!-- SEO Meta Tags -->
+    <meta property="og:title" content="Flowering Calendar - 316 East Buena Vista">
+    <meta property="og:description" content="Seasonal flowering calendar and plant guide for the historic gardens">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    
+    <link rel="stylesheet" href="cs/common.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================
+           SOPHISTICATED FLOWERING CALENDAR STYLES
+           ============================================ */
+        
+        :root {
+            --color-cream: #FAF8F5;
+            --color-sage: #7A8B6E;
+            --color-sage-light: #9BAF8C;
+            --color-sage-dark: #5A6B4E;
+            --color-terracotta: #C4A484;
+            --color-terracotta-dark: #A68B6A;
+            --color-charcoal: #2C2C2C;
+            --color-stone: #8B8680;
+            --color-warm-white: #FFFEF9;
+            --color-border: rgba(0,0,0,0.08);
+            
+            --font-serif: 'Cormorant Garamond', Georgia, serif;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            
+            --shadow-soft: 0 4px 20px rgba(0,0,0,0.06);
+            --shadow-medium: 0 8px 40px rgba(0,0,0,0.1);
+            --shadow-hover: 0 12px 50px rgba(0,0,0,0.12);
+            
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        /* Page-specific overrides */
+        .fc-page {
+            background: var(--color-cream);
+            min-height: 100vh;
+        }
+        
+        .fc-page * {
+            box-sizing: border-box;
+        }
+        
+        /* Hero Section */
+        .fc-hero {
+            background: linear-gradient(135deg, var(--color-sage-dark) 0%, var(--color-sage) 50%, var(--color-sage-light) 100%);
+            padding: 6rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .fc-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+        
+        .fc-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .fc-hero-eyebrow {
+            font-family: var(--font-sans);
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 1rem;
+        }
+        
+        .fc-hero-title {
+            font-family: var(--font-serif);
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 400;
+            color: #fff;
+            margin: 0 0 1.5rem 0;
+            line-height: 1.1;
+        }
+        
+        .fc-hero-subtitle {
+            font-family: var(--font-sans);
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: rgba(255,255,255,0.85);
+            line-height: 1.7;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Main Container */
+        .fc-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Season Navigation */
+        .fc-season-nav {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            margin: -2rem auto 4rem;
+            position: relative;
+            z-index: 10;
+            max-width: 600px;
+            background: var(--color-warm-white);
+            border-radius: 50px;
+            padding: 0.5rem;
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .fc-season-btn {
+            flex: 1;
+            padding: 1rem 1.5rem;
+            border: none;
+            background: transparent;
+            font-family: var(--font-sans);
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--color-stone);
+            cursor: pointer;
+            border-radius: 40px;
+            transition: var(--transition-smooth);
+            position: relative;
+        }
+        
+        .fc-season-btn:hover {
+            color: var(--color-charcoal);
+        }
+        
+        .fc-season-btn.active {
+            background: var(--color-sage);
+            color: #fff;
+        }
+        
+        .fc-season-btn span {
+            display: block;
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        /* Section Headers */
+        .fc-section {
+            margin-bottom: 5rem;
+        }
+        
+        .fc-section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .fc-section-title {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: var(--color-charcoal);
+            margin: 0 0 0.75rem 0;
+        }
+        
+        .fc-section-subtitle {
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            font-weight: 300;
+            color: var(--color-stone);
+        }
+        
+        /* Search & Filter */
+        .fc-filters {
+            background: var(--color-warm-white);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: var(--shadow-soft);
+        }
+        
+        .fc-search-row {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .fc-search-input {
+            flex: 1;
+            padding: 1rem 1.5rem;
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            background: var(--color-cream);
+            transition: var(--transition-smooth);
+        }
+        
+        .fc-search-input:focus {
+            outline: none;
+            border-color: var(--color-sage);
+            box-shadow: 0 0 0 4px rgba(122, 139, 110, 0.1);
+        }
+        
+        .fc-search-input::placeholder {
+            color: var(--color-stone);
+        }
+        
+        .fc-filter-label {
+            font-family: var(--font-sans);
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--color-stone);
+            margin-bottom: 0.75rem;
+        }
+        
+        .fc-filter-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .fc-filter-chip {
+            padding: 0.6rem 1.25rem;
+            border: 1px solid var(--color-border);
+            background: var(--color-cream);
+            border-radius: 30px;
+            font-family: var(--font-sans);
+            font-size: 0.875rem;
+            color: var(--color-stone);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+        
+        .fc-filter-chip:hover {
+            border-color: var(--color-sage);
+            color: var(--color-sage);
+        }
+        
+        .fc-filter-chip.active {
+            background: var(--color-sage);
+            border-color: var(--color-sage);
+            color: #fff;
+        }
+        
+        /* Timeline Calendar */
+        .fc-timeline {
+            background: var(--color-warm-white);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 4rem;
+            box-shadow: var(--shadow-soft);
+            overflow-x: auto;
+        }
+        
+        .fc-timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 2rem;
+        }
+        
+        .fc-timeline-title {
+            font-family: var(--font-serif);
+            font-size: 1.75rem;
+            font-weight: 400;
+            color: var(--color-charcoal);
+            margin: 0;
+        }
+        
+        .fc-timeline-legend {
+            display: flex;
+            gap: 1.5rem;
+            font-family: var(--font-sans);
+            font-size: 0.8rem;
+            color: var(--color-stone);
+        }
+        
+        .fc-legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .fc-legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+        }
+        
+        .fc-legend-dot.bloom { background: var(--color-terracotta); }
+        .fc-legend-dot.peak { background: var(--color-sage); }
+        
+        .fc-timeline-grid {
+            display: grid;
+            grid-template-columns: 220px repeat(12, 1fr);
+            gap: 1px;
+            background: var(--color-border);
+            border-radius: 12px;
+            overflow: hidden;
+            min-width: 900px;
+        }
+        
+        .fc-timeline-cell {
+            background: var(--color-warm-white);
+            padding: 1rem;
+        }
+        
+        .fc-timeline-month {
+            background: var(--color-cream);
+            padding: 0.75rem 0.5rem;
+            text-align: center;
+            font-family: var(--font-sans);
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            color: var(--color-stone);
+        }
+        
+        .fc-timeline-plant {
+            background: var(--color-warm-white);
+            padding: 1rem 1.25rem;
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            color: var(--color-charcoal);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .fc-timeline-plant:hover {
+            background: var(--color-cream);
+        }
+        
+        .fc-timeline-plant-thumb {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+        
+        .fc-timeline-plant-name {
+            font-weight: 500;
+        }
+        
+        .fc-timeline-plant-sci {
+            font-size: 0.75rem;
+            font-style: italic;
+            color: var(--color-stone);
+        }
+        
+        .fc-timeline-bar-cell {
+            background: var(--color-warm-white);
+            padding: 1rem 0.25rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .fc-timeline-bar {
+            width: 100%;
+            height: 24px;
+            border-radius: 4px;
+        }
+        
+        .fc-timeline-bar.bloom {
+            background: linear-gradient(135deg, var(--color-terracotta) 0%, var(--color-terracotta-dark) 100%);
+        }
+        
+        .fc-timeline-bar.peak {
+            background: linear-gradient(135deg, var(--color-sage-light) 0%, var(--color-sage) 100%);
+        }
+        
+        /* Plant Cards - Masonry Style */
+        .fc-plants-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 2rem;
+        }
+        
+        .fc-plant-card {
+            background: var(--color-warm-white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+        
+        .fc-plant-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .fc-plant-card:hover .fc-plant-image {
+            transform: scale(1.05);
+        }
+        
+        .fc-plant-image-wrapper {
+            position: relative;
+            height: 280px;
+            overflow: hidden;
+        }
+        
+        .fc-plant-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .fc-plant-image-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--color-sage-light) 0%, var(--color-sage) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: rgba(255,255,255,0.5);
+        }
+        
+        .fc-plant-season-badge {
+            position: absolute;
+            top: 1.25rem;
+            left: 1.25rem;
+            padding: 0.5rem 1rem;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            font-family: var(--font-sans);
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--color-charcoal);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .fc-plant-type-badge {
+            position: absolute;
+            top: 1.25rem;
+            right: 1.25rem;
+            padding: 0.5rem 1rem;
+            background: var(--color-sage);
+            border-radius: 20px;
+            font-family: var(--font-sans);
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .fc-plant-content {
+            padding: 1.75rem;
+        }
+        
+        .fc-plant-name {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--color-charcoal);
+            margin: 0 0 0.25rem 0;
+            line-height: 1.2;
+        }
+        
+        .fc-plant-scientific {
+            font-family: var(--font-serif);
+            font-size: 1rem;
+            font-style: italic;
+            color: var(--color-stone);
+            margin-bottom: 1rem;
+        }
+        
+        .fc-plant-description {
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            font-weight: 300;
+            color: var(--color-stone);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        /* Mini Bloom Calendar */
+        .fc-bloom-mini {
+            margin-bottom: 1.5rem;
+        }
+        
+        .fc-bloom-mini-label {
+            font-family: var(--font-sans);
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--color-stone);
+            margin-bottom: 0.5rem;
+        }
+        
+        .fc-bloom-mini-bar {
+            display: flex;
+            gap: 3px;
+        }
+        
+        .fc-bloom-mini-month {
+            flex: 1;
+            height: 6px;
+            background: var(--color-cream);
+            border-radius: 3px;
+            transition: var(--transition-smooth);
+        }
+        
+        .fc-bloom-mini-month.bloom {
+            background: var(--color-terracotta);
+        }
+        
+        .fc-bloom-mini-month.peak {
+            background: var(--color-sage);
+        }
+        
+        .fc-bloom-mini-labels {
+            display: flex;
+            gap: 3px;
+            margin-top: 4px;
+        }
+        
+        .fc-bloom-mini-labels span {
+            flex: 1;
+            text-align: center;
+            font-family: var(--font-sans);
+            font-size: 0.55rem;
+            color: var(--color-stone);
+            opacity: 0.7;
+        }
+        
+        /* Plant Meta */
+        .fc-plant-meta {
+            display: flex;
+            gap: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--color-border);
+        }
+        
+        .fc-plant-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-family: var(--font-sans);
+            font-size: 0.8rem;
+            color: var(--color-stone);
+        }
+        
+        .fc-plant-meta-icon {
+            font-size: 1rem;
+        }
+        
+        /* Results Info */
+        .fc-results-info {
+            font-family: var(--font-sans);
+            font-size: 0.875rem;
+            color: var(--color-stone);
+            margin-bottom: 2rem;
+        }
+        
+        .fc-results-count {
+            font-weight: 600;
+            color: var(--color-charcoal);
+        }
+        
+        /* No Results */
+        .fc-no-results {
+            text-align: center;
+            padding: 5rem 2rem;
+            background: var(--color-warm-white);
+            border-radius: 20px;
+        }
+        
+        .fc-no-results-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.3;
+        }
+        
+        .fc-no-results h3 {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--color-charcoal);
+            margin: 0 0 0.5rem 0;
+        }
+        
+        .fc-no-results p {
+            font-family: var(--font-sans);
+            color: var(--color-stone);
+        }
+        
+        /* ============================================
+           MODAL STYLES
+           ============================================ */
+        
+        .fc-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            overflow-y: auto;
+            padding: 2rem;
+        }
+        
+        .fc-modal.active {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+        }
+        
+        .fc-modal-content {
+            background: var(--color-warm-white);
+            border-radius: 24px;
+            max-width: 1000px;
+            width: 100%;
+            margin: 2rem auto;
+            overflow: hidden;
+            animation: modalFadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px) scale(0.98);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        .fc-modal-header {
+            position: relative;
+        }
+        
+        .fc-modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            width: 48px;
+            height: 48px;
+            background: rgba(0,0,0,0.4);
+            backdrop-filter: blur(10px);
+            border: none;
+            border-radius: 50%;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: var(--transition-smooth);
+        }
+        
+        .fc-modal-close:hover {
+            background: rgba(0,0,0,0.6);
+            transform: rotate(90deg);
+        }
+        
+        .fc-modal-image-wrapper {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+        }
+        
+        .fc-modal-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .fc-modal-image-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--color-sage-light) 0%, var(--color-sage) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            color: rgba(255,255,255,0.3);
+        }
+        
+        .fc-modal-badges {
+            position: absolute;
+            bottom: 1.5rem;
+            left: 1.5rem;
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .fc-modal-badge {
+            padding: 0.6rem 1.25rem;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 25px;
+            font-family: var(--font-sans);
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--color-charcoal);
+        }
+        
+        .fc-modal-body {
+            padding: 3rem;
+        }
+        
+        .fc-modal-title-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .fc-modal-title {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: var(--color-charcoal);
+            margin: 0;
+            line-height: 1.1;
+        }
+        
+        .fc-modal-scientific {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            font-style: italic;
+            color: var(--color-stone);
+            margin-top: 0.25rem;
+        }
+        
+        /* Modal Bloom Calendar */
+        .fc-modal-bloom {
+            background: var(--color-cream);
+            border-radius: 16px;
+            padding: 1.75rem;
+            margin-bottom: 2.5rem;
+        }
+        
+        .fc-modal-bloom-title {
+            font-family: var(--font-sans);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--color-stone);
+            margin-bottom: 1rem;
+        }
+        
+        .fc-modal-bloom-bar {
+            display: flex;
+            gap: 6px;
+        }
+        
+        .fc-modal-bloom-month {
+            flex: 1;
+            height: 40px;
+            background: var(--color-border);
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-sans);
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: var(--color-stone);
+            transition: var(--transition-smooth);
+        }
+        
+        .fc-modal-bloom-month.bloom {
+            background: var(--color-terracotta);
+            color: #fff;
+        }
+        
+        .fc-modal-bloom-month.peak {
+            background: var(--color-sage);
+            color: #fff;
+        }
+        
+        /* Modal Sections */
+        .fc-modal-section {
+            margin-bottom: 2.5rem;
+        }
+        
+        .fc-modal-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .fc-modal-section-title {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--color-charcoal);
+            margin: 0 0 1.25rem 0;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--color-sage);
+            display: inline-block;
+        }
+        
+        .fc-modal-description {
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            font-weight: 300;
+            color: var(--color-charcoal);
+            line-height: 1.8;
+        }
+        
+        /* Characteristics Grid */
+        .fc-characteristics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+        
+        .fc-characteristic {
+            background: var(--color-cream);
+            border-radius: 12px;
+            padding: 1.25rem;
+        }
+        
+        .fc-characteristic-label {
+            font-family: var(--font-sans);
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--color-sage);
+            margin-bottom: 0.5rem;
+        }
+        
+        .fc-characteristic-value {
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            font-weight: 300;
+            color: var(--color-charcoal);
+            line-height: 1.6;
+        }
+        
+        /* Care Tips */
+        .fc-care-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.25rem;
+        }
+        
+        .fc-care-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1.25rem;
+            background: var(--color-cream);
+            border-radius: 12px;
+        }
+        
+        .fc-care-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--color-sage);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .fc-care-content {
+            flex: 1;
+        }
+        
+        .fc-care-title {
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--color-charcoal);
+            margin-bottom: 0.25rem;
+        }
+        
+        .fc-care-text {
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            font-weight: 300;
+            color: var(--color-stone);
+            line-height: 1.5;
+        }
+        
+        /* Landscape Uses */
+        .fc-landscape-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        
+        .fc-landscape-tag {
+            padding: 0.75rem 1.25rem;
+            background: var(--color-cream);
+            border-radius: 25px;
+            font-family: var(--font-sans);
+            font-size: 0.875rem;
+            color: var(--color-charcoal);
+            border: 1px solid var(--color-border);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .fc-hero {
+                padding: 4rem 1.5rem;
+            }
+            
+            .fc-container {
+                padding: 0 1rem;
+            }
+            
+            .fc-season-nav {
+                flex-wrap: wrap;
+                border-radius: 16px;
+                margin: -1.5rem 1rem 3rem;
+            }
+            
+            .fc-season-btn {
+                flex: 1 1 45%;
+            }
+            
+            .fc-plants-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .fc-modal-body {
+                padding: 1.5rem;
+            }
+            
+            .fc-modal-title {
+                font-size: 1.75rem;
+            }
+            
+            .fc-modal-image-wrapper {
+                height: 280px;
+            }
+            
+            .fc-care-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Footer Override */
+        .fc-footer {
+            background: var(--color-charcoal);
+            color: rgba(255,255,255,0.7);
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-top: 5rem;
+        }
+        
+        .fc-footer h3 {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: #fff;
+            margin: 0 0 1rem 0;
+        }
+        
+        .fc-footer p {
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            font-weight: 300;
+            max-width: 600px;
+            margin: 0 auto 1.5rem;
+            line-height: 1.7;
+        }
+        
+        .fc-footer-copy {
+            font-size: 0.8rem;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body class="fc-page">
+    <div id="nav-placeholder"></div>
+    
+    <!-- Hero Section -->
+    <section class="fc-hero">
+        <div class="fc-hero-content">
+            <div class="fc-hero-eyebrow">316 East Buena Vista Street</div>
+            <h1 class="fc-hero-title">Flowering Plant Calendar</h1>
+            <p class="fc-hero-subtitle">A curated guide to the seasonal blooms of our historic high-desert garden, featuring care instructions, landscape uses, and year-round beauty.</p>
+        </div>
+    </section>
+    
+    <!-- Season Navigation -->
+    <nav class="fc-season-nav">
+        <button class="fc-season-btn active" data-season="all">
+            <span>✨</span>
+            All Seasons
+        </button>
+        <button class="fc-season-btn" data-season="winter">
+            <span>❄️</span>
+            Winter
+        </button>
+        <button class="fc-season-btn" data-season="spring">
+            <span>🌸</span>
+            Spring
+        </button>
+        <button class="fc-season-btn" data-season="summer">
+            <span>☀️</span>
+            Summer
+        </button>
+        <button class="fc-season-btn" data-season="fall">
+            <span>🍂</span>
+            Fall
+        </button>
+    </nav>
+    
+    <main class="fc-container">
+        
+        <!-- Filters Section -->
+        <section class="fc-section">
+            <div class="fc-filters">
+                <div class="fc-search-row">
+                    <input type="text" class="fc-search-input" id="searchInput" placeholder="Search by plant name, type, or characteristics...">
+                </div>
+                <div class="fc-filter-label">Filter by Type</div>
+                <div class="fc-filter-group" id="typeFilters">
+                    <button class="fc-filter-chip active" data-type="all">All Plants</button>
+                    <button class="fc-filter-chip" data-type="shrub">Shrubs</button>
+                    <button class="fc-filter-chip" data-type="perennial">Perennials</button>
+                    <button class="fc-filter-chip" data-type="annual">Annuals</button>
+                    <button class="fc-filter-chip" data-type="vine">Vines</button>
+                    <button class="fc-filter-chip" data-type="tree">Trees</button>
+                    <button class="fc-filter-chip" data-type="bulb">Bulbs</button>
+                    <button class="fc-filter-chip" data-type="grass">Grasses</button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Timeline Calendar -->
+        <section class="fc-section">
+            <div class="fc-timeline">
+                <div class="fc-timeline-header">
+                    <h2 class="fc-timeline-title">Annual Bloom Timeline</h2>
+                    <div class="fc-timeline-legend">
+                        <div class="fc-legend-item">
+                            <div class="fc-legend-dot bloom"></div>
+                            <span>Blooming</span>
+                        </div>
+                        <div class="fc-legend-item">
+                            <div class="fc-legend-dot peak"></div>
+                            <span>Peak Bloom</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="fc-timeline-grid" id="timelineGrid">
+                    <!-- Generated by JavaScript -->
+                </div>
+            </div>
+        </section>
+        
+        <!-- Plant Cards Section -->
+        <section class="fc-section">
+            <div class="fc-section-header">
+                <h2 class="fc-section-title">Plant Collection</h2>
+                <p class="fc-section-subtitle">Click any plant to view detailed care information</p>
+            </div>
+            
+            <div class="fc-results-info">
+                Showing <span class="fc-results-count" id="resultsCount">1</span> plants
+            </div>
+            
+            <div class="fc-plants-grid" id="plantsGrid">
+                <!-- Generated by JavaScript -->
+            </div>
+            
+            <div class="fc-no-results" id="noResults" style="display: none;">
+                <div class="fc-no-results-icon">🔍</div>
+                <h3>No plants found</h3>
+                <p>Try adjusting your search or filters</p>
+            </div>
+        </section>
+        
+    </main>
+    
+    <!-- Plant Detail Modal -->
+    <div class="fc-modal" id="plantModal">
+        <div class="fc-modal-content">
+            <div class="fc-modal-header">
+                <button class="fc-modal-close" onclick="closeModal()">×</button>
+                <div class="fc-modal-image-wrapper" id="modalImageWrapper">
+                    <!-- Image inserted by JS -->
+                </div>
+                <div class="fc-modal-badges" id="modalBadges">
+                    <!-- Badges inserted by JS -->
+                </div>
+            </div>
+            <div class="fc-modal-body" id="modalBody">
+                <!-- Content inserted by JS -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="fc-footer">
+        <h3>316 East Buena Vista Street</h3>
+        <p>A living document of architectural heritage, historic preservation, and the ongoing story of Santa Fe's Prairie-style adobe house.</p>
+        <p class="fc-footer-copy">© 2025 Historic Preservation Documentation Project</p>
+    </footer>
+    
+    <script src="js/navigation.js"></script>
+    <script>
+        // ============================================
+        // PLANT DATABASE
+        // Add new plants following this structure
+        // ============================================
+        
+        const plants = [
+            {
+                id: 'winter-jasmine',
+                name: 'Winter Jasmine',
+                scientificName: 'Jasminum nudiflorum',
+                type: 'shrub',
+                image: 'plants/winter_jasmine.png',
+                bloomMonths: [1, 2, 3],
+                peakMonths: [2],
+                season: 'winter',
+                description: 'A versatile, low-maintenance, deciduous shrub prized for its bright yellow flowers that bloom on bare, green stems in late winter or early spring. Native to China, it\'s a valuable, early food source for bees and other insects.',
+                characteristics: {
+                    appearance: 'Sprawling, arching habit with distinctive square, green stems that remain attractive in winter. The leaves are small, dark green, and trifoliate (three leaflets), emerging after the flowers have bloomed.',
+                    flowers: 'Non-fragrant, funnel-shaped, yellow flowers typically appear from January to March. The name "nudiflorum" literally means "naked flower," referring to this habit of blooming on bare stems.',
+                    size: 'Typically grows as a sprawling mound 3 to 4 feet tall, but can be trained as a vine up to 10 to 15 feet in height with support.',
+                    hardiness: 'Hardy in USDA zones 6 to 10.',
+                    special: 'Deer-resistant, making it a good choice for various landscapes.'
+                },
+                care: {
+                    sun: 'Full sun to partial shade; more sun generally results in more flowers. Can tolerate full shade, but flowering will be significantly reduced.',
+                    soil: 'Adaptable to a wide range of soil conditions but thrives in moist, well-drained loams.',
+                    water: 'Water regularly after planting until established. Once established, it is relatively drought-tolerant and usually doesn\'t require watering outside of natural rainfall.',
+                    pruning: 'Prune immediately after flowering in the spring. This encourages new growth that will produce flowers the following winter and helps control its size and shape.'
+                },
+                landscapeUses: [
+                    'Mass plantings on slopes for erosion control',
+                    'Cascading over retaining walls',
+                    'Training on trellis or fence',
+                    'Ground cover on slopes',
+                    'Winter interest in mixed borders'
+                ]
+            }
+            // Add more plants here...
+        ];
+        
+        // ============================================
+        // INITIALIZATION
+        // ============================================
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            renderTimeline(plants);
+            renderPlants(plants);
+            setupEventListeners();
+        });
+        
+        // ============================================
+        // RENDER FUNCTIONS
+        // ============================================
+        
+        function renderTimeline(filteredPlants) {
+            const grid = document.getElementById('timelineGrid');
+            const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            
+            let html = `
+                <div class="fc-timeline-cell fc-timeline-month" style="background: var(--color-sage); color: #fff;">Plant</div>
+                ${months.map(m => `<div class="fc-timeline-cell fc-timeline-month">${m}</div>`).join('')}
+            `;
+            
+            filteredPlants.forEach(plant => {
+                html += `
+                    <div class="fc-timeline-plant" onclick="openModal('${plant.id}')">
+                        ${plant.image ? `<img src="${plant.image}" alt="" class="fc-timeline-plant-thumb">` : ''}
+                        <div>
+                            <div class="fc-timeline-plant-name">${plant.name}</div>
+                            <div class="fc-timeline-plant-sci">${plant.scientificName}</div>
+                        </div>
+                    </div>
+                    ${[1,2,3,4,5,6,7,8,9,10,11,12].map(month => `
+                        <div class="fc-timeline-bar-cell">
+                            ${plant.bloomMonths.includes(month) ? 
+                                `<div class="fc-timeline-bar ${plant.peakMonths.includes(month) ? 'peak' : 'bloom'}"></div>` : 
+                                ''
+                            }
+                        </div>
+                    `).join('')}
+                `;
+            });
+            
+            grid.innerHTML = html;
+        }
+        
+        function renderPlants(filteredPlants) {
+            const grid = document.getElementById('plantsGrid');
+            const noResults = document.getElementById('noResults');
+            const resultsCount = document.getElementById('resultsCount');
+            
+            resultsCount.textContent = filteredPlants.length;
+            
+            if (filteredPlants.length === 0) {
+                grid.style.display = 'none';
+                noResults.style.display = 'block';
+                return;
+            }
+            
+            grid.style.display = 'grid';
+            noResults.style.display = 'none';
+            
+            grid.innerHTML = filteredPlants.map(plant => `
+                <article class="fc-plant-card" onclick="openModal('${plant.id}')">
+                    <div class="fc-plant-image-wrapper">
+                        ${plant.image ? 
+                            `<img src="${plant.image}" alt="${plant.name}" class="fc-plant-image">` :
+                            `<div class="fc-plant-image-placeholder">🌿</div>`
+                        }
+                        <div class="fc-plant-season-badge">${formatSeason(plant.season)}</div>
+                        <div class="fc-plant-type-badge">${plant.type}</div>
+                    </div>
+                    <div class="fc-plant-content">
+                        <h3 class="fc-plant-name">${plant.name}</h3>
+                        <div class="fc-plant-scientific">${plant.scientificName}</div>
+                        <p class="fc-plant-description">${plant.description}</p>
+                        
+                        <div class="fc-bloom-mini">
+                            <div class="fc-bloom-mini-label">Bloom Period</div>
+                            <div class="fc-bloom-mini-bar">
+                                ${[1,2,3,4,5,6,7,8,9,10,11,12].map(month => `
+                                    <div class="fc-bloom-mini-month ${plant.bloomMonths.includes(month) ? (plant.peakMonths.includes(month) ? 'peak' : 'bloom') : ''}"></div>
+                                `).join('')}
+                            </div>
+                            <div class="fc-bloom-mini-labels">
+                                <span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span>
+                                <span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span>
+                            </div>
+                        </div>
+                        
+                        <div class="fc-plant-meta">
+                            <span class="fc-plant-meta-item">
+                                <span class="fc-plant-meta-icon">☀️</span>
+                                ${getSunSummary(plant.care.sun)}
+                            </span>
+                            <span class="fc-plant-meta-item">
+                                <span class="fc-plant-meta-icon">💧</span>
+                                ${getWaterSummary(plant.care.water)}
+                            </span>
+                            <span class="fc-plant-meta-item">
+                                <span class="fc-plant-meta-icon">📏</span>
+                                ${getSizeSummary(plant.characteristics.size)}
+                            </span>
+                        </div>
+                    </div>
+                </article>
+            `).join('');
+        }
+        
+        // ============================================
+        // MODAL FUNCTIONS
+        // ============================================
+        
+        function openModal(plantId) {
+            const plant = plants.find(p => p.id === plantId);
+            if (!plant) return;
+            
+            const modal = document.getElementById('plantModal');
+            const imageWrapper = document.getElementById('modalImageWrapper');
+            const badges = document.getElementById('modalBadges');
+            const body = document.getElementById('modalBody');
+            
+            const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            
+            // Image
+            imageWrapper.innerHTML = plant.image ?
+                `<img src="${plant.image}" alt="${plant.name}" class="fc-modal-image">` :
+                `<div class="fc-modal-image-placeholder">🌿</div>`;
+            
+            // Badges
+            badges.innerHTML = `
+                <span class="fc-modal-badge">${formatSeason(plant.season)} Bloomer</span>
+                <span class="fc-modal-badge">${capitalize(plant.type)}</span>
+            `;
+            
+            // Body content
+            body.innerHTML = `
+                <div class="fc-modal-title-row">
+                    <div>
+                        <h2 class="fc-modal-title">${plant.name}</h2>
+                        <div class="fc-modal-scientific">${plant.scientificName}</div>
+                    </div>
+                </div>
+                
+                <div class="fc-modal-bloom">
+                    <div class="fc-modal-bloom-title">🌸 Bloom Calendar</div>
+                    <div class="fc-modal-bloom-bar">
+                        ${months.map((m, i) => `
+                            <div class="fc-modal-bloom-month ${plant.bloomMonths.includes(i+1) ? (plant.peakMonths.includes(i+1) ? 'peak' : 'bloom') : ''}">${m}</div>
+                        `).join('')}
+                    </div>
+                </div>
+                
+                <div class="fc-modal-section">
+                    <h3 class="fc-modal-section-title">About</h3>
+                    <p class="fc-modal-description">${plant.description}</p>
+                </div>
+                
+                <div class="fc-modal-section">
+                    <h3 class="fc-modal-section-title">Characteristics</h3>
+                    <div class="fc-characteristics-grid">
+                        ${Object.entries(plant.characteristics).map(([key, value]) => `
+                            <div class="fc-characteristic">
+                                <div class="fc-characteristic-label">${formatKey(key)}</div>
+                                <div class="fc-characteristic-value">${value}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+                
+                <div class="fc-modal-section">
+                    <h3 class="fc-modal-section-title">Care Guide</h3>
+                    <div class="fc-care-grid">
+                        <div class="fc-care-item">
+                            <div class="fc-care-icon">☀️</div>
+                            <div class="fc-care-content">
+                                <div class="fc-care-title">Sun Exposure</div>
+                                <div class="fc-care-text">${plant.care.sun}</div>
+                            </div>
+                        </div>
+                        <div class="fc-care-item">
+                            <div class="fc-care-icon">🌱</div>
+                            <div class="fc-care-content">
+                                <div class="fc-care-title">Soil</div>
+                                <div class="fc-care-text">${plant.care.soil}</div>
+                            </div>
+                        </div>
+                        <div class="fc-care-item">
+                            <div class="fc-care-icon">💧</div>
+                            <div class="fc-care-content">
+                                <div class="fc-care-title">Watering</div>
+                                <div class="fc-care-text">${plant.care.water}</div>
+                            </div>
+                        </div>
+                        <div class="fc-care-item">
+                            <div class="fc-care-icon">✂️</div>
+                            <div class="fc-care-content">
+                                <div class="fc-care-title">Pruning</div>
+                                <div class="fc-care-text">${plant.care.pruning}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="fc-modal-section">
+                    <h3 class="fc-modal-section-title">Landscape Uses</h3>
+                    <div class="fc-landscape-tags">
+                        ${plant.landscapeUses.map(use => `
+                            <span class="fc-landscape-tag">${use}</span>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+            
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeModal() {
+            document.getElementById('plantModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        // ============================================
+        // FILTER FUNCTIONS
+        // ============================================
+        
+        function filterPlants() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const activeType = document.querySelector('.fc-filter-chip.active')?.dataset.type || 'all';
+            const activeSeason = document.querySelector('.fc-season-btn.active')?.dataset.season || 'all';
+            
+            const filtered = plants.filter(plant => {
+                const matchesSearch = !searchTerm || 
+                    plant.name.toLowerCase().includes(searchTerm) ||
+                    plant.scientificName.toLowerCase().includes(searchTerm) ||
+                    plant.type.toLowerCase().includes(searchTerm) ||
+                    plant.description.toLowerCase().includes(searchTerm);
+                
+                const matchesType = activeType === 'all' || plant.type === activeType;
+                const matchesSeason = activeSeason === 'all' || plant.season === activeSeason;
+                
+                return matchesSearch && matchesType && matchesSeason;
+            });
+            
+            renderTimeline(filtered);
+            renderPlants(filtered);
+        }
+        
+        // ============================================
+        // EVENT LISTENERS
+        // ============================================
+        
+        function setupEventListeners() {
+            // Search
+            document.getElementById('searchInput').addEventListener('input', filterPlants);
+            
+            // Type filters
+            document.querySelectorAll('.fc-filter-chip').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.fc-filter-chip').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    filterPlants();
+                });
+            });
+            
+            // Season filters
+            document.querySelectorAll('.fc-season-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.fc-season-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    filterPlants();
+                });
+            });
+            
+            // Modal close
+            document.getElementById('plantModal').addEventListener('click', function(e) {
+                if (e.target === this) closeModal();
+            });
+            
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') closeModal();
+            });
+        }
+        
+        // ============================================
+        // HELPER FUNCTIONS
+        // ============================================
+        
+        function capitalize(str) {
+            return str.charAt(0).toUpperCase() + str.slice(1);
+        }
+        
+        function formatKey(key) {
+            return key.replace(/([A-Z])/g, ' $1').replace(/^./, s => s.toUpperCase());
+        }
+        
+        function formatSeason(season) {
+            const seasons = {
+                winter: 'Winter',
+                spring: 'Spring', 
+                summer: 'Summer',
+                fall: 'Autumn'
+            };
+            return seasons[season] || season;
+        }
+        
+        function getSunSummary(text) {
+            if (text.toLowerCase().includes('full sun')) return 'Full Sun';
+            if (text.toLowerCase().includes('partial')) return 'Part Shade';
+            if (text.toLowerCase().includes('shade')) return 'Shade';
+            return 'Varies';
+        }
+        
+        function getWaterSummary(text) {
+            if (text.toLowerCase().includes('drought')) return 'Low';
+            if (text.toLowerCase().includes('regular')) return 'Medium';
+            if (text.toLowerCase().includes('moist')) return 'High';
+            return 'Medium';
+        }
+        
+        function getSizeSummary(text) {
+            const match = text.match(/(\d+)\s*(?:to|-)\s*(\d+)?\s*feet/i);
+            if (match) return match[2] ? `${match[1]}-${match[2]} ft` : `${match[1]} ft`;
+            return 'Varies';
+        }
+    </script>
+    
+    <!-- Navigation and Helper Scripts -->
+    <script src="js/navigation.js"></script>
+    <script src="js/helpers.js"></script>
+</body>
+</html>

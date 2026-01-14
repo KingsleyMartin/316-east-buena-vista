@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>316 East Buena Vista Street - Living Heritage Documentation</title>
+    <meta name="description" content="Historic documentation and restoration progress of Francis Wilson's 1910 Prairie-style adobe house in Santa Fe, New Mexico">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: #2d2d2d;
+            background: #fafafa;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #3d3d3d 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+        }
+        
+        .header-content {
+            text-align: center;
+            z-index: 2;
+            position: relative;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .property-id {
+            font-family: 'Monaco', 'Consolas', monospace;
+            font-size: 1.1em;
+            color: #b8860b;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .header h1 {
+            font-size: 4.5em;
+            font-weight: 100;
+            margin-bottom: 30px;
+            line-height: 1.1;
+            letter-spacing: -2px;
+        }
+        
+        .header-subtitle {
+            font-size: 1.4em;
+            font-weight: 300;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+        
+        .metadata-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .metadata-item {
+            text-align: left;
+            padding: 25px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.12);
+            backdrop-filter: blur(10px);
+        }
+        
+        .metadata-label {
+            font-size: 0.9em;
+            color: #b8860b;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .metadata-value {
+            font-size: 1.2em;
+            font-weight: 300;
+        }
+        
+        .nav {
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 30px;
+            height: 70px;
+        }
+        
+        .nav-logo {
+            font-weight: 600;
+            color: #2d2d2d;
+            font-size: 1.1em;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 40px;
+        }
+        
+        .nav-links a {
+            color: #666;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+        
+        .nav-links a:hover, .nav-links a.active {
+            color: #2d2d2d;
+            background: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+        
+        .section {
+            padding: 80px 0;
+            display: none;
+        }
+        
+        .section.active {
+            display: block;
+        }
+        
+        .section-header {
+            margin-bottom: 60px;
+        }
+        
+        .section-title {
+            font-size: 3.2em;
+            font-weight: 200;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+        
+        .section-subtitle {
+            font-size: 1.3em;
+            color: #666;
+            font-weight: 300;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+        
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.06);
+            border: 1px solid #f0f0f0;
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        }
+        
+        .card-header {
+            padding: 30px 30px 0;
+        }
+        
+        .card-meta {
+            font-size: 0.9em;
+            color: #b8860b;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        
+        .card-title {
+            font-size: 1.8em;
+            font-weight: 400;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+        }
+        
+        .card-content {
+            padding: 0 30px 30px;
+        }
+        
+        .card-description {
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        
+        .features-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .features-list li {
+            padding: 8px 0;
+            color: #555;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .features-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #b8860b;
+            font-weight: bold;
+        }
+        
+        .timeline-container {
+            position: relative;
+            margin: 60px 0;
+        }
+        
+        .timeline-track {
+            position: absolute;
+            left: 50px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, #b8860b, #daa520);
+        }
+        
+        .timeline-item {
+            display: flex;
+            align-items: flex-start;
+            margin: 60px 0;
+            position: relative;
+        }
+        
+        .timeline-marker {
+            width: 100px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .timeline-year {
+            background: #b8860b;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.9em;
+            box-shadow: 0 4px 15px rgba(184, 134, 11, 0.3);
+        }
+        
+        .timeline-content {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            border: 1px solid #f0f0f0;
+            flex: 1;
+            margin-left: 30px;
+        }
+        
+        .timeline-title {
+            font-size: 1.4em;
+            font-weight: 500;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+        }
+        
+        .timeline-description {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .documentation-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin: 60px 0;
+            align-items: start;
+        }
+        
+        .doc-section {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.06);
+            border: 1px solid #f0f0f0;
+        }
+        
+        .doc-section h3 {
+            font-size: 1.6em;
+            font-weight: 500;
+            color: #1a1a1a;
+            margin-bottom: 25px;
+        }
+        
+        .doc-list {
+            list-style: none;
+        }
+        
+        .doc-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #f5f5f5;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .doc-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .doc-title {
+            color: #2d2d2d;
+            font-weight: 500;
+        }
+        
+        .doc-date {
+            color: #999;
+            font-size: 0.9em;
+        }
+        
+        .restoration-tracker {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 20px;
+            padding: 50px;
+            margin: 60px 0;
+        }
+        
+        .restoration-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .restoration-title {
+            font-size: 2.5em;
+            font-weight: 300;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+        }
+        
+        .progress-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .progress-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            border: 1px solid #f0f0f0;
+        }
+        
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .progress-title {
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        
+        .progress-percentage {
+            color: #b8860b;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+        
+        .progress-bar-container {
+            background: #f5f5f5;
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+        
+        .progress-bar-fill {
+            background: linear-gradient(90deg, #b8860b, #daa520);
+            height: 100%;
+            border-radius: 4px;
+            transition: width 1s ease;
+        }
+        
+        .progress-description {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+        
+        .footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .footer-title {
+            font-size: 1.5em;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+        
+        .footer-description {
+            color: #ccc;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 { font-size: 2.8em; }
+            .metadata-grid { grid-template-columns: 1fr; }
+            .nav-container { flex-direction: column; height: auto; padding: 20px; }
+            .nav-links { margin-top: 20px; gap: 20px; flex-wrap: wrap; }
+            .cards-grid { grid-template-columns: 1fr; }
+            .documentation-grid { grid-template-columns: 1fr; gap: 30px; }
+            .timeline-track { left: 30px; }
+            .timeline-marker { width: 80px; }
+            .timeline-content { margin-left: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="property-id">HISTORIC PROPERTY • SANTA FE</div>
+            <h1>316 East Buena Vista</h1>
+            <p class="header-subtitle">Prairie Style Adobe House<br>Continuous Documentation of Historic Preservation</p>
+            
+            <div class="metadata-grid">
+                <div class="metadata-item">
+                    <div class="metadata-label">Built</div>
+                    <div class="metadata-value">1910</div>
+                </div>
+                <div class="metadata-item">
+                    <div class="metadata-label">Architect</div>
+                    <div class="metadata-value">Francis Wilson</div>
+                </div>
+                <div class="metadata-item">
+                    <div class="metadata-label">Style</div>
+                    <div class="metadata-value">Prairie & Mission</div>
+                </div>
+                <div class="metadata-item">
+                    <div class="metadata-label">Status</div>
+                    <div class="metadata-value">Under Restoration</div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-logo">Living Heritage Documentation</div>
+            <div class="nav-links">
+                <a onclick="showSection('overview')" class="active">Overview</a>
+                <a onclick="showSection('history')">History</a>
+                <a onclick="showSection('architecture')">Architecture</a>
+                <a onclick="showSection('restoration')">Restoration</a>
+                <a onclick="showSection('documents')">Documents</a>
+            </div>
+        </div>
+    </nav>
+    
+    <section id="overview" class="section active">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Property Overview</h2>
+                <p class="section-subtitle">A rare example of Prairie School architecture executed in adobe, representing Santa Fe's architectural diversity before the Spanish-Pueblo Revival became dominant.</p>
+            </div>
+            
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-meta">Architectural Significance</div>
+                        <h3 class="card-title">Prairie Style Adobe</h3>
+                    </div>
+                    <div class="card-content">
+                        <p class="card-description">Built in 1910 by Francis Wilson, this house represents a unique fusion of Prairie School principles with traditional Southwestern adobe construction methods.</p>
+                        <ul class="features-list">
+                            <li>Horizontal emphasis with low-pitched hipped roofs</li>
+                            <li>Distinctive wooden stripping creating strong horizontal lines</li>
+                            <li>J-shaped floor plan around central placita</li>
+                            <li>Mission-style interior with Arts & Crafts elements</li>
+                            <li>Ten-foot ceilings and open floor plan</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-meta">Historic Significance</div>
+                        <h3 class="card-title">Notable Residents</h3>
+                    </div>
+                    <div class="card-content">
+                        <p class="card-description">Home to prominent figures in New Mexico legal and political history, including a territorial attorney and state supreme court justice.</p>
+                        <ul class="features-list">
+                            <li>Francis Wilson: water law authority, oil pioneer</li>
+                            <li>Charlotte Wilson: DAR national officer, civic leader</li>
+                            <li>William Federici: NM Supreme Court Justice (1977-1986)</li>
+                            <li>Bronson Cutting: rented house in 1910 during construction</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-meta">Water Heritage</div>
+                        <h3 class="card-title">Historic Well System</h3>
+                    </div>
+                    <div class="card-content">
+                        <p class="card-description">Pre-basin well from early 1900s continues to supply water. Originally served the Cross Orchard, later Charlotte Wilson's renowned terraced gardens.</p>
+                        <ul class="features-list">
+                            <li>Hand-dug well predating 1956 basin declaration</li>
+                            <li>15-20 gallons per minute production capacity</li>
+                            <li>Unique sluiceway irrigation system</li>
+                            <li>Acequia Madre ran along front property line</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-meta">Current Status</div>
+                        <h3 class="card-title">Restoration Project</h3>
+                    </div>
+                    <div class="card-content">
+                        <p class="card-description">Comprehensive restoration addressing structural damage while preserving historic character. Documentation of process provides insights into early 20th century construction.</p>
+                        <ul class="features-list">
+                            <li>Water damage repair and prevention</li>
+                            <li>Historic garden restoration planning</li>
+                            <li>Original material preservation and documentation</li>
+                            <li>Continuous photographic documentation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="history" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Detailed History</h2>
+                <p class="section-subtitle">The lives and contributions of the remarkable people who called 316 East Buena Vista home, from territorial New Mexico to modern preservation efforts.</p>
+            </div>
+            
+            <!-- Francis and Charlotte Wilson Era -->
+            <div class="cards-grid" style="margin-bottom: 80px;">
+                <div class="card" style="grid-column: 1 / -1;">
+                    <div class="card-header">
+                        <div class="card-meta">1910 - 1954 • Founding Era</div>
+                        <h3 class="card-title">Francis Cushman Wilson & Charlotte Parker Wilson</h3>
+                    </div>
+                    <div class="card-content">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+                            <div>
+                                <h4 style="color: #b8860b; margin-bottom: 15px; font-size: 1.3em;">Francis Cushman Wilson (1876-1952)</h4>
+                                <p class="card-description"><strong>Education & Early Career:</strong> Born in Winchester, Massachusetts, son of Harvard-trained lawyer and Civil War major. Harvard Class of 1898 (volunteered for Spanish-American War before graduation), LL.B. from Columbia University Law School (now George Washington University) in 1903.</p>
+                                
+                                <p class="card-description"><strong>New Mexico Arrival:</strong> Came to New Mexico in 1907 as young lawyer from Washington, D.C. First non-resident of the territory to serve as clerk of the First Judicial District, replacing A.M. Bergere.</p>
+                                
+                                <p class="card-description"><strong>Legal Career:</strong> U.S. attorney for Pueblo Indians (1909), private partnership with Richard H. Hanna until 1912. President of New Mexico State Bar Association (1912), admitted to U.S. Supreme Court bar. Later partnered with former NM Supreme Court Justice John C. Watson.</p>
+                                
+                                <p class="card-description"><strong>Specializations:</strong> Water law authority, expert on Pueblo land questions, public domain, and interstate compacts. Published numerous articles in law journals and popular magazines. Represented clients including Bronson Cutting, Mary Austin, and the White sisters.</p>
+                            </div>
+                            <div>
+                                <h4 style="color: #b8860b; margin-bottom: 15px; font-size: 1.3em;">Charlotte Lansing Parker Wilson (d. 1954)</h4>
+                                <p class="card-description"><strong>Heritage:</strong> Descended from old Virginia family including Continental Congress member (1784-1785) and two governors. Married Francis in 1902.</p>
+                                
+                                <p class="card-description"><strong>Civic Leadership:</strong> Before public welfare era, helped establish programs for underprivileged children and aged, which evolved into State Welfare Department. Served as president of State Board of Public Welfare, chairman of Santa Fe Woman's Club.</p>
+                                
+                                <p class="card-description"><strong>Political Activity:</strong> Active in Woman's Republican Club, chairman of governor's inaugural balls, ran for State Senate in 1936.</p>
+                                
+                                <p class="card-description"><strong>DAR Leadership:</strong> Rose to national office in Daughters of the American Revolution - local and state regent, vice president general of fortieth Continental Congress (1931), first national DAR officer from New Mexico. Instrumental in selection and adoption of current New Mexico state flag (1925), designed by Harry Mera.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Wilson Business Ventures -->
+            <div class="cards-grid" style="margin-bottom: 80px;">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-meta">1920s-1940s • Business Ventures</div>
+                        <h3 class="card-title">Development & Oil Enterprises</h3>
+                    </div>
+                    <div class="card-content">
+                        <h4 style="color: #b8860b; margin-bottom: 15px;">Real Estate Development</h4>
+                        <p class="card-description">Secretary-treasurer of <strong>John Evans' Flying Heart Development Corporation</strong>, which purchased the Don Diego addition. Major partner in <strong>De Vargas Development Corporation</strong> with the White sisters, using their financial resources and his expertise to acquire and subdivide the extensive De Vargas grant in southeast Santa Fe.</p>
+                        
+                        <h4 style="color: #b8860b; margin-bottom: 15px; margin-top: 25px;">Street Naming</h4>
+                        <p class="card-description">Wilson was responsible for naming <strong>Camino Rancheros</strong>, <strong>Camino Corrales</strong>, and renaming their part of College Street as <strong>"Santa Fe Trail."</strong></p>
+                        
+                        <h4 style="color: #b8860b; margin-bottom: 15px; margin-top: 25px;">Oil Business (1938-1952)</h4>
+                        <p class="card-description">Entered oil business after striking large quantities in Lea County. Organized <strong>Wilson Oil Company</strong> as president, became recognized expert in petroleum geology and management. Appointed to executive committee of <strong>Independent Oil Association of America</strong>.</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-meta">Community Impact • Philanthropy</div>
+                        <h3 class="card-title">Cultural & Educational Legacy</h3>
+                    </div>
+                    <div class="card-content">
+                        <h4 style="color: #b8860b; margin-bottom: 15px;">Land Donations</h4>
+                        <p class="card-description">Francis Wilson and the White sisters donated large tracts for the <strong>Laboratory of Anthropology</strong>, <strong>Museum of International Folk Art</strong>, and <strong>United States Regional Park Service building</strong>.</p>
+                        
+                        <h4 style="color: #b8860b; margin-bottom: 15px; margin-top: 25px;">Cultural Organizations</h4>
+                        <p class="card-description">Francis: Organizer of the Fiesta, president of Community Theater Association (organized by Mary Austin, 1919), incorporator and trustee of Indian Arts Fund, managing board member of School of American Research.</p>
+                        
+                        <p class="card-description">Charlotte: Organizer of Library Association, founder and chairman of Women's Museum Board, trustee of Laboratory of Anthropology.</p>
+                        
+                        <h4 style="color: #b8860b; margin-bottom: 15px; margin-top: 25px;">Professional Legacy</h4>
+                        <p class="card-description">Wilson's law library and bookcases given to University of New Mexico to become nucleus of Law School library. His extensive professional papers (inventory occupies nearly 100 pages) now at State Records Center and Archives.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Wilson Social Life & Gardens -->
+            <div class="cards-grid" style="margin-bottom: 80px;">
+                <div class="card" style="grid-column: 1 / -1;">
+                    <div class="card-header">
+                        <div class="card-meta">Social Life • Gardens • Design</div>
+                        <h3 class="card-title">The Wilson House as Social & Horticultural Center</h3>
+                    </div>
+                    <div class="card-content">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+                            <div>
+                                <h4 style="color: #b8860b; margin-bottom: 15px;">Social Entertainment</h4>
+                                <p class="card-description">The Wilsons were very social and loved to dance. Mrs. Wilson was famous as a cook. Once yearly, she organized elaborate dances with neighbor Flora Conrad, possibly for fundraising. Both houses would be decorated, Wilson dining room furniture removed to create dance floor, living room casement windows opened, and Japanese lanterns hung in the pear tree in the placita.</p>
+                                
+                                <h4 style="color: #b8860b; margin-bottom: 15px; margin-top: 25px;">Interior Design</h4>
+                                <p class="card-description"><strong>Living Room:</strong> Walnut-stained box beams, light tan walls, red brick mantelpiece with walnut trim and apricot-colored plastered panels above. Mission-style furniture throughout.</p>
+                                
+                                <p class="card-description"><strong>Dining Room:</strong> All woodwork painted dull black to match furniture (sideboard, china closets, serving table, dining set). Blue panels between wainscoting strips, apricot walls and lighter apricot ceiling. Stylized Huichol-eka painted panels by fireplace. Square electric fixtures made from stained glass hung from box beams with black metal chains.</p>
+                            </div>
+                            <div>
+                                <h4 style="color: #b8860b; margin-bottom: 15px;">Charlotte's Renowned Gardens</h4>
+                                <p class="card-description">Charlotte Wilson was one of Santa Fe's outstanding gardeners. The sloping land was terraced and irrigated by a unique system of sluiceways taking water from level to level.</p>
+                                
+                                <ul class="features-list" style="margin: 20px 0;">
+                                    <li><strong>Orchard remnants:</strong> Apple, pear, plum, and one very large apricot tree</li>
+                                    <li><strong>Placita gardens:</strong> Roses, lilies, nasturtiums around central courtyard</li>
+                                    <li><strong>Vegetable gardens:</strong> In the back of the yard</li>
+                                    <li><strong>Berry cultivation:</strong> Different berries on west side</li>
+                                    <li><strong>Currant bushes:</strong> Thick stand near Acequia Madre front property line</li>
+                                </ul>
+                                
+                                <h4 style="color: #b8860b; margin-bottom: 15px; margin-top: 25px;">Garden Tours</h4>
+                                <p class="card-description">House and gardens included on tours of Santa Fe's finest homes, such as Santa Fe Garden Club tour for 50 Albuquerque women, featuring showplaces like El Zaguan, Carlos Vierra house, Sheldon Parsons garden and studio, Katherine Stinson Otero's home, and the White sisters' gardens, chapel and library.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Federici Era -->
+            <div class="cards-grid" style="margin-bottom: 80px;">
+                <div class="card" style="grid-column: 1 / -1;">
+                    <div class="card-header">
+                        <div class="card-meta">1958 - 1980 • Legal Legacy Continues</div>
+                        <h3 class="card-title">William R. Federici Family Era</h3>
+                    </div>
+                    <div class="card-content">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+                            <div>
+                                <h4 style="color: #b8860b; margin-bottom: 15px;">Justice William R. Federici (1917-)</h4>
+                                <p class="card-description"><strong>Background:</strong> Born in Cimarron, New Mexico, to Italian immigrant parents from Tuscany. Law degree from University of Colorado at Boulder (1941).</p>
+                                
+                                <p class="card-description"><strong>Legal Career:</strong> Served as Assistant Attorney General of New Mexico, joined firm of Seth and Montgomery (later Seth, Montgomery, Federici & Andrews) in 1948.</p>
+                                
+                                <p class="card-description"><strong>Supreme Court Service:</strong> New Mexico Supreme Court Justice (1977-1986), served as Chief Justice (1984-1985).</p>
+                                
+                                <h4 style="color: #b8860b; margin-bottom: 15px; margin-top: 25px;">House Modifications</h4>
+                                <p class="card-description">Most significant change was commissioning <strong>Rudy Rosales</strong> to build large stone living room mantelpiece of sandstone from Loveland, Colorado, over the original simple brick mantelpiece (which Federici believed remains underneath).</p>
+                            </div>
+                            <div>
+                                <h4 style="color: #b8860b; margin-bottom: 15px;">Family Stewardship</h4>
+                                <p class="card-description">The Federici family maintained the property for 22 years, continuing use of the historic well for landscape irrigation. Mrs. Federici confirmed the well was on the property when they moved in and that they actively used it for gardening.</p>
+                                
+                                <h4 style="color: #b8860b; margin-bottom: 15px; margin-top: 25px;">Other Changes During Era</h4>
+                                <ul class="features-list">
+                                    <li>Wood floors covered with carpeting</li>
+                                    <li>Four original light fixtures removed from living room beams</li>
+                                    <li>Original Wilson interior color schemes altered</li>
+                                    <li>Metal casements replaced wooden vertical sashes in kitchen east wall</li>
+                                </ul>
+                                
+                                <p class="card-description" style="margin-top: 20px;">Despite these changes, the fundamental architectural character and most historic elements were preserved during the Federici stewardship.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Later Ownership Periods -->
+            <div class="cards-grid" style="margin-bottom: 80px;">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-meta">1980s-1990s • Transition Period</div>
+                        <h3 class="card-title">Rental Property & Student Housing</h3>
+                    </div>
+                    <div class="card-content">
+                        <p class="card-description">After the Federici family sold the house, it became rental property, housing St. John's College students for a period. This era saw the beginning of deferred maintenance that would later challenge the property's structural integrity.</p>
+                        
+                        <p class="card-description">The absence of owner-occupancy during this period meant that small maintenance issues began to accumulate, particularly roof problems that would eventually lead to water damage in multiple rooms.</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-meta">Mid-1990s • Garden Revival</div>
+                        <h3 class="card-title">David Kent & Margaret Love Era</h3>
+                    </div>
+                    <div class="card-content">
+                        <p class="card-description"><strong>California Furniture Makers:</strong> Owners of Berkeley Mills, a California furniture company, brought craftsman sensibilities to the property's restoration.</p>
+                        
+                        <h4 style="color: #b8860b; margin-bottom: 15px; margin-top: 20px;">Garden Discovery & Revival</h4>
+                        <p class="card-description">"The garden is full of rare and unusual plants, more of which show up every year! When we first saw the garden it had been neglected for many years and was entirely covered with elm trees which almost hid the house!"</p>
+                        
+                        <h4 style="color: #b8860b; margin-bottom: 15px; margin-top: 20px;">Well System Restoration</h4>
+                        <p class="card-description">Discovered rusted pump and revived the historic well system, achieving 15-20 gallons per minute flow. Installed new two-inch polypropylene feeder lines four feet deep with modern irrigation controllers in the well house.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Recent Ownership -->
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-meta">1999-2008 • Cohen Family</div>
+                        <h3 class="card-title">Barnet & Barbara Cohen</h3>
+                    </div>
+                    <div class="card-content">
+                        <p class="card-description">Ownership period during which detailed water rights research was conducted (2008), establishing the historic well as pre-basin (pre-1956) with significant legal protections.</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-meta">2008-2020 • Waldron Family</div>
+                        <h3 class="card-title">Aaron & Chantal Waldron</h3>
+                    </div>
+                    <div class="card-content">
+                        <p class="card-description">Twelve-year ownership period during which the property's maintenance needs began to accumulate, leading to the current restoration challenges.</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-meta">2020-2025 • Shortes Period</div>
+                        <h3 class="card-title">Zeke Shortes</h3>
+                    </div>
+                    <div class="card-content">
+                        <p class="card-description">Five-year period during which deferred maintenance issues became critical, with roof leaks causing water damage that rendered some rooms uninhabitable.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Current Era -->
+            <div class="restoration-tracker" style="margin-top: 80px;">
+                <div class="restoration-header">
+                    <h2 class="restoration-title">Current Era: Comprehensive Restoration</h2>
+                    <p><strong>Kingsley Martin & Catherine Murray • September 2025 - Present</strong></p>
+                </div>
+                
+                <div style="background: white; padding: 40px; border-radius: 16px; margin-top: 40px;">
+                    <h3 style="color: #1a1a1a; margin-bottom: 25px;">Restoration Philosophy</h3>
+                    <p style="color: #666; line-height: 1.6; margin-bottom: 25px;">Our approach honors both the Prairie School architectural principles that Francis Wilson embodied in this unique adobe house and the rich layers of history added by each subsequent family. Rather than attempting to return the house to a single "original" moment, we're preserving the accumulated heritage while addressing critical structural and safety needs.</p>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 30px;">
+                        <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; border-left: 4px solid #b8860b;">
+                            <h4 style="color: #1a1a1a; margin-bottom: 15px;">Structural Priorities</h4>
+                            <p style="color: #666; font-size: 0.95em;">Address water damage, roof integrity, and foundation stability while preserving original adobe construction methods</p>
+                        </div>
+                        <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; border-left: 4px solid #b8860b;">
+                            <h4 style="color: #1a1a1a; margin-bottom: 15px;">Historic Preservation</h4>
+                            <p style="color: #666; font-size: 0.95em;">Maintain Prairie-style elements, Mission interior features, and architectural integrity while improving functionality</p>
+                        </div>
+                        <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; border-left: 4px solid #b8860b;">
+                            <h4 style="color: #1a1a1a; margin-bottom: 15px;">Garden Restoration</h4>
+                            <p style="color: #666; font-size: 0.95em;">Revive Charlotte Wilson's terraced garden design using historic sluiceway principles with modern efficiency</p>
+                        </div>
+                        <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; border-left: 4px solid #b8860b;">
+                            <h4 style="color: #1a1a1a; margin-bottom: 15px;">Documentation</h4>
+                            <p style="color: #666; font-size: 0.95em;">Create comprehensive record of restoration process, discoveries, and preservation techniques for future caretakers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="architecture" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Architectural Analysis</h2>
+                <p class="section-subtitle">A rare synthesis of Prairie School principles with Southwestern adobe construction, representing Santa Fe's architectural diversity before the Spanish-Pueblo Revival monopolized local building styles.</p>
+            </div>
+            
+            <!-- Architectural Context -->
+            <div class="cards-grid" style="margin-bottom: 80px;">
+                <div class="card" style="grid-column: 1 / -1;">
+                    <div class="card-header">
+                        <div class="card-meta">Historical Context • Arts & Crafts Movement</div>
+                        <h3 class="card-title">Prairie Style Meets Adobe: A Unique Architectural Fusion</h3>
+                    </div>
+                    <div class="card-content">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+                            <div>
+                                <h4 style="color: #b8860b; margin-bottom: 15px;">Arts & Crafts Movement Context</h4>
+                                <p class="card-description">The Wilson House embodies the Arts and Crafts movement's reaction against industrialization's effects on design. This movement, beginning in 19th-century England, advocated return to simplicity of handwork, elimination of gratuitous decorative detail, and respect for material integrity.</p>
+                                
+                                <p class="card-description">In America, the movement manifested in regional architectural styles rooted in natural environment and local traditions, sharing reverence for natural simplicity and search for genuine American style not tied to European past.</p>
+                                
+                                <h4 style="color: #b8860b; margin-bottom: 15px; margin-top: 25px;">Prairie School Origins</h4>
+                                <p class="card-description">Born in Chicago, the Prairie style represented unique regional expression with horizontal lines said to express flat prairie expanses. <strong>Louis Sullivan</strong> served as spiritual father, <strong>Frank Lloyd Wright</strong> as best-known practitioner. The style spread nationally through magazines and pattern books from 1900 through WWI.</p>
+                            </div>
+                            <div>
+                                <h4 style="color: #b8860b; margin-bottom: 15px;">Southwestern Adaptation</h4>
+                                <p class="card-description"><strong>Henry Trost</strong>, who worked in Chicago, designed notable Prairie examples in the Southwest, including his own home in El Paso and the Spitz House in Albuquerque (both ~1909). No evidence found that Trost was active in Santa Fe, making Wilson's house potentially self-designed.</p>
+                                
+                                <h4 style="color: #b8860b; margin-bottom: 15px; margin-top: 25px;">Mission Style Interior</h4>
+                                <p class="card-description">The term "Mission" came to be loosely applied to Arts and Crafts movement products, including furniture and compatible interior décor styles. Wilson's interior exemplifies this with extensive woodwork, built-in furniture, and craftsman details.</p>
+                                
+                                <h4 style="color: #b8860b; margin-bottom: 15px; margin-top: 25px;">Gustav Stickley Influence</h4>
+                                <p class="card-description">Floor plan shows strong similarity to <strong>Gustav Stickley's Mission prototype</strong> published in <em>The Craftsman</em> magazine, suggesting Wilson may have adapted published plans to local adobe construction methods.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Exterior Architecture -->
+            <div class="cards-grid" style="margin-bottom: 80px;">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-meta">Exterior Design • Prairie Elements</div>
+                        <h3 class="card-title">Horizontal Emphasis & Form</h3>
+                    </div>
+                    <div class="card-content">
+                        <h4 style="color: #b8860b; margin-bottom: 15px;">J-Shaped Configuration</h4>
+                        <p class="card-description">Distinctive two-story house with two one-story wings of unequal length extending south, forming J-shape around central <strong>placita</strong> (courtyard). Wings faced on two sides by portal supported by round, stained posts.</p>
+                        
+                        <h4 style="color: #b8860b; margin-bottom: 15px; margin-top: 20px;">Prairie Style Characteristics</h4>
+                        <ul class="features-list">
+                            <li><strong>Low-pitched, hipped roofs</strong> creating horizontal emphasis</li>
+                            <li><strong>Strong overhanging eaves</strong> providing weather protection</li>
+                            <li><strong>Horizontal wooden stripping</strong> marking story division</li>
+                            <li><strong>Flat wall surfaces</strong> without applied decoration</li>
+                            <li><strong>Bands of second-story windows</strong> emphasizing horizontality</li>
+                            <li><strong>Oblong chimney</strong> maintaining horizontal aesthetic</li>
+                        </ul>
+                        
+                        <h4 style="color: #b8860b; margin-bottom: 15px; margin-top: 20px;">Local Adaptation</h4>
+                        <p class="card-description">Placement of one-story wings around placita and portal facing it derive from local Southwestern tradition, creating unique fusion of Prairie and regional elements.</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-meta">Materials & Construction</div>
+                        <h3 class="card-title">Adobe Construction Methods</h3>
+                    </div>
+                    <div class="card-content">
+                        <h4 style="color: #b8860b; margin-bottom: 15px;">Exterior Materials</h4>
+                        <p class="card-description"><strong>Pebbled, gray cement-stuccoed exterior</strong> over adobe walls, free of decoration except for narrow, light-green wooden stripping. This demonstrates versatility of adobe in non-traditional architectural styles.</p>
+                        
+                        <h4 style="color: #b8860b; margin-bottom: 15px; margin-top: 20px;">Window Systems</h4>
+                        <p class="card-description">First-floor windows predominantly <strong>double-hung with twelve small panes</strong> in top section and single pane below, inset in multiples of two or three with concrete sills and lintels.</p>
+                        
+                        <h4 style="color: #b8860b; margin-bottom: 15px; margin-top: 20px;">Structural Elements</h4>
+                        <ul class="features-list">
+                            <li>Partial stone basement on east end</li>
+                            <li>Flagstone walk around house perimeter</li>
+                            <li>Exposed adobes visible in unfinished second-floor room</li>
+                            <li>Cement mortar and wooden framing construction</li>
+                        </ul>
+                        
+                        <h4 style="color: #b8860b; margin-bottom: 15px; margin-top: 20px;">Roof System</h4>
+                        <p class="card-description">Current asbestos-tile roof (suggestive of Mission style) is not original but added at unknown date, replacing original roofing material.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Interior Architecture -->
+            <div class="cards-grid" style="margin-bottom: 80px;">
+                <div class="card" style="grid-column: 1 / -1;">
+                    <div class="card-header">
+                        <div class="card-meta">Interior Design • Mission Style Elements</div>
+                        <h3 class="card-title">Arts & Crafts Interior: Open Plan with Craftsman Details</h3>
+                    </div>
+                    <div class="card-content">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 30px;">
+                            <div>
+                                <h4 style="color: #b8860b; margin-bottom: 15px;">Spatial Organization</h4>
+                                <p class="card-description">Relatively open plan with <strong>ten-foot ceilings</strong> throughout. Entry through small foyer leads via square-columned pedestal colonnade into spacious living room, with dining room immediately visible through wide, square opening.</p>
+                                
+                                <h4 style="color: #b8860b; margin-bottom: 15px; margin-top: 20px;">Living Room Features</h4>
+                                <ul class="features-list">
+                                    <li>Two alcoves: north-facing windows and east fireplace nook</li>
+                                    <li>Door to south placita</li>
+                                    <li>Built-in wooden benches</li>
+                                    <li>Dark-stained box beam ceiling</li>
+                                    <li>Prominent fireplace with cut-sandstone mantelpiece</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 style="color: #b8860b; margin-bottom: 15px;">Dining Room Design</h4>
+                                <p class="card-description">Wainscoted effect created by vertical wooden strips placed about a foot apart, extending down from plate rail. <strong>Built-in china cupboard</strong> with leaded-glass doors, four drawers, and recessed mirror.</p>
+                                
+                                <h4 style="color: #b8860b; margin-bottom: 15px; margin-top: 20px;">Service Areas</h4>
+                                <ul class="features-list">
+                                    <li><strong>Butler's pantry:</strong> Narrow, lined ceiling-to-floor with glass-doored cupboards</li>
+                                    <li><strong>Kitchen:</strong> High cupboards, metal casement windows over sink</li>
+                                    <li><strong>Service rooms:</strong> Maid's bedroom, dry goods pantry, ice box pantry</li>
+                                    <li><strong>Dual placita access:</strong> Kitchen and service room doors</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 style="color: #b8860b; margin-bottom: 15px;">Second Floor Layout</h4>
+                                <p class="card-description">Large central room with cedar closets serves as hall leading to five rooms, one unfinished (revealing construction methods).</p>
+                                
+                                <h4 style="color: #b8860b; margin-bottom: 15px; margin-top: 20px;">Window Details</h4>
+                                <p class="card-description">Windows primarily <strong>eight-paned casements</strong>, sometimes flanking fixed panes. Some original multi-paned casements replaced with fixed single panes during Spurrier ownership.</p>
+                                
+                                <h4 style="color: #b8860b; margin-bottom: 15px; margin-top: 20px;">Construction Evidence</h4>
+                                <p class="card-description">Unfinished room shows <strong>exposed adobes with cement mortar and wooden framing</strong>, providing rare insight into early 20th-century adobe construction techniques.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Craftsman Design Philosophy -->
+            <div class="cards-grid" style="margin-bottom: 80px;">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-meta">Gustav Stickley Influence</div>
+                        <h3 class="card-title">"Craftsman Homes" Design Principles</h3>
+                    </div>
+                    <div class="card-content">
+                        <h4 style="color: #b8860b; margin-bottom: 15px;">Stickley's "Craftsman Idea"</h4>
+                        <p class="card-description">Emphasized simplicity, durability, convenience, and harmony with natural surroundings. Wilson House demonstrates these principles through material choice and spatial organization.</p>
+                        
+                        <h4 style="color: #b8860b; margin-bottom: 15px; margin-top: 20px;">Implemented Features</h4>
+                        <ul class="features-list">
+                            <li><strong>Large main rooms</strong> with free space unencumbered by partitions</li>
+                            <li><strong>Direct entry</strong> from entrance to living room via small vestibule</li>
+                            <li><strong>Intimate nooks and corners</strong> creating sense of intimacy</li>
+                            <li><strong>Abundant wood use</strong> in wainscoting and built-ins</li>
+                            <li><strong>Central fireplace</strong> representing familial hearthstone</li>
+                            <li><strong>Garden connection</strong> through placita and portal</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-meta">Built-in Furniture System</div>
+                        <h3 class="card-title">Integrated Craftsman Elements</h3>
+                    </div>
+                    <div class="card-content">
+                        <h4 style="color: #b8860b; margin-bottom: 15px;">Woodwork Integration</h4>
+                        <p class="card-description">Extensive built-in wooden elements obviated need for excessive furnishings while creating unified aesthetic throughout house.</p>
+                        
+                        <h4 style="color: #b8860b; margin-bottom: 15px; margin-top: 20px;">Specific Built-ins</h4>
+                        <ul class="features-list">
+                            <li><strong>Benches:</strong> Entry room, north alcove, south wall of living room</li>
+                            <li><strong>China cupboard:</strong> Leaded-glass doors, drawers, recessed mirror</li>
+                            <li><strong>Cedar closets:</strong> Second floor hall built-ins</li>
+                            <li><strong>Wainscoting:</strong> Vertical strips creating unified wall treatment</li>
+                            <li><strong>Box beams:</strong> Decorative ceiling structure in main rooms</li>
+                        </ul>
+                        
+                        <h4 style="color: #b8860b; margin-bottom: 15px; margin-top: 20px;">Original Lighting</h4>
+                        <p class="card-description">Square electric fixtures made from stained glass pieces, hung from box beams with black metal chains, plus matching wall sconces with black metal rods.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Architectural Significance -->
+            <div class="restoration-tracker" style="margin-top: 80px;">
+                <div class="restoration-header">
+                    <h2 class="restoration-title">Architectural Significance & Preservation Challenges</h2>
+                    <p>Understanding the unique architectural value and current preservation needs</p>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px;">
+                    <div style="background: white; padding: 40px; border-radius: 16px; border: 1px solid #f0f0f0;">
+                        <h3 style="color: #1a1a1a; margin-bottom: 25px;">Historical Importance</h3>
+                        <p style="color: #666; line-height: 1.6; margin-bottom: 20px;">The Wilson House provides rare illustration of adobe's versatility and Santa Fe's architectural diversity in transitional years before Spanish-Pueblo Revival achieved hegemony. It represents important evidence of varied but little understood period.</p>
+                        
+                        <h4 style="color: #b8860b; margin-bottom: 15px; margin-top: 25px;">National Context</h4>
+                        <ul class="features-list">
+                            <li>Unique Prairie School adaptation to Southwestern materials</li>
+                            <li>Demonstrates Arts & Crafts movement's regional variations</li>
+                            <li>Shows transition period before stylistic monopolization</li>
+                            <li>Illustrates architect-builder experimentation in early Santa Fe</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background: white; padding: 40px; border-radius: 16px; border: 1px solid #f0f0f0;">
+                        <h3 style="color: #1a1a1a; margin-bottom: 25px;">Current Condition Assessment</h3>
+                        <p style="color: #666; line-height: 1.6; margin-bottom: 20px;">House has been little altered from original appearance but has suffered serious effects of neglect in recent years, with water damage from roof leaks affecting multiple rooms.</p>
+                        
+                        <h4 style="color: #b8860b; margin-bottom: 15px; margin-top: 25px;">Preservation Priorities</h4>
+                        <ul class="features-list">
+                            <li>Address structural water damage while preserving original adobe</li>
+                            <li>Restore Prairie-style horizontal emphasis elements</li>
+                            <li>Preserve Mission-style interior woodwork and built-ins</li>
+                            <li>Maintain open floor plan and ten-foot ceiling heights</li>
+                            <li>Document construction methods visible in unfinished areas</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div style="background: #f8f9fa; padding: 40px; border-radius: 16px; margin-top: 40px; border-left: 5px solid #b8860b;">
+                    <h3 style="color: #1a1a1a; margin-bottom: 20px;">Restoration Approach: Preserving Architectural Integrity</h3>
+                    <p style="color: #666; line-height: 1.6;">Our restoration philosophy recognizes this house as significant cultural resource both for its associations with the Wilson and Federici families and for its place in Santa Fe architecture history. The goal is preserving its predominant Prairie style, Spanish-Pueblo Revival elements, and Craftsman Mission-style interior as unified response to Arts and Crafts sensibilities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="restoration" class="section">
+        <div class="container">
+            <div class="restoration-tracker">
+                <div class="restoration-header">
+                    <h2 class="restoration-title">Live Restoration Progress</h2>
+                    <p>Real-time documentation of preservation efforts</p>
+                </div>
+                
+                <div class="progress-cards">
+                    <div class="progress-card">
+                        <div class="progress-header">
+                            <h4 class="progress-title">Historical Research</h4>
+                            <span class="progress-percentage">95%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar-fill" style="width: 95%;"></div>
+                        </div>
+                        <p class="progress-description">Archival research completed, oral histories collected, architectural documentation nearly finished. Foundation plaque research from 1993 provides comprehensive baseline.</p>
+                    </div>
+                    
+                    <div class="progress-card">
+                        <div class="progress-header">
+                            <h4 class="progress-title">Structural Assessment</h4>
+                            <span class="progress-percentage">100%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar-fill" style="width: 100%;"></div>
+                        </div>
+                        <p class="progress-description">Complete evaluation of water damage from roof leaks, structural integrity assessment, and documentation of original construction methods visible in unfinished second floor room.</p>
+                    </div>
+                    
+                    <div class="progress-card">
+                        <div class="progress-header">
+                            <h4 class="progress-title">Water Systems Analysis</h4>
+                            <span class="progress-percentage">80%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar-fill" style="width: 80%;"></div>
+                        </div>
+                        <p class="progress-description">Pre-basin well confirmed operational at 15-20 GPM. Historic irrigation system mapped. Modern upgrades planned to work with existing sluiceway principles.</p>
+                    </div>
+                    
+                    <div class="progress-card">
+                        <div class="progress-header">
+                            <h4 class="progress-title">Garden Restoration Planning</h4>
+                            <span class="progress-percentage">70%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar-fill" style="width: 70%;"></div>
+                        </div>
+                        <p class="progress-description">Charlotte Wilson's terraced garden design researched. Remaining orchard trees catalogued. Sluiceway irrigation system principles documented for restoration.</p>
+                    </div>
+                    
+                    <div class="progress-card">
+                        <div class="progress-header">
+                            <h4 class="progress-title">Roof & Weather Sealing</h4>
+                            <span class="progress-percentage">25%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar-fill" style="width: 25%;"></div>
+                        </div>
+                        <p class="progress-description">Priority repairs to prevent further water damage. Original asbestos-tile roof assessment ongoing. Modern weatherproofing planned while maintaining historic appearance.</p>
+                    </div>
+                    
+                    <div class="progress-card">
+                        <div class="progress-header">
+                            <h4 class="progress-title">Interior Restoration</h4>
+                            <span class="progress-percentage">15%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar-fill" style="width: 15%;"></div>
+                        </div>
+                        <p class="progress-description">Planning phase for restoring original color schemes and finishes. Documentation of existing conditions complete. Original hardwood floors to be restored and protected.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="documents" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Document Archive</h2>
+                <p class="section-subtitle">Historical records, research documents, and restoration progress reports.</p>
+            </div>
+            
+            <div class="documentation-grid">
+                <div class="doc-section">
+                    <h3>Historical Documents</h3>
+                    <ul class="doc-list">
+                        <li>
+                            <span class="doc-title">Historic Santa Fe Foundation Plaque Research</span>
+                            <span class="doc-date">Dec 1993</span>
+                        </li>
+                        <li>
+                            <span class="doc-title">Water Rights Engineering Memo</span>
+                            <span class="doc-date">Aug 2008</span>
+                        </li>
+                        <li>
+                            <span class="doc-title">Property Ownership History</span>
+                            <span class="doc-date">1909-2025</span>
+                        </li>
+                        <li>
+                            <span class="doc-title">Francis Wilson Professional Papers</span>
+                            <span class="doc-date">State Archives</span>
+                        </li>
+                        <li>
+                            <span class="doc-title">1912 Nat King Maps</span>
+                            <span class="doc-date">City Planning</span>
+                        </li>
+                        <li>
+                            <span class="doc-title">1914 State Engineer Survey</span>
+                            <span class="doc-date">Irrigation Records</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="doc-section">
+                    <h3>Restoration Documentation</h3>
+                    <ul class="doc-list">
+                        <li>
+                            <span class="doc-title">Structural Assessment Report</span>
+                            <span class="doc-date">Jan 2025</span>
+                        </li>
+                        <li>
+                            <span class="doc-title">Pre-Restoration Photo Documentation</span>
+                            <span class="doc-date">Ongoing</span>
+                        </li>
+                        <li>
+                            <span class="doc-title">Material Analysis & Conservation Plan</span>
+                            <span class="doc-date">In Progress</span>
+                        </li>
+                        <li>
+                            <span class="doc-title">Garden Restoration Design</span>
+                            <span class="doc-date">Planning</span>
+                        </li>
+                        <li>
+                            <span class="doc-title">Weekly Progress Reports</span>
+                            <span class="doc-date">Starting Soon</span>
+                        </li>
+                        <li>
+                            <span class="doc-title">Discovery Documentation</span>
+                            <span class="doc-date">As Occurs</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="background: white; padding: 50px; border-radius: 16px; margin-top: 60px; text-align: center; border: 1px solid #f0f0f0;">
+                <h3 style="color: #1a1a1a; margin-bottom: 25px; font-size: 1.8em; font-weight: 400;">Living Documentation Project</h3>
+                <p style="color: #666; font-size: 1.2em; line-height: 1.6; max-width: 700px; margin: 0 auto;">This website serves as a continuous record of the restoration process. Check back regularly for updated progress reports, new discoveries, and photographic documentation of this Prairie-style adobe house returning to its historic glory.</p>
+                <div style="margin-top: 40px; padding: 20px; background: #f8f9fa; border-radius: 12px; display: inline-block;">
+                    <strong style="color: #b8860b;">Next Update:</strong> <span style="color: #666;">Roof repair progress and material discoveries</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <div class="footer-content">
+            <h3 class="footer-title">316 East Buena Vista Street</h3>
+            <p class="footer-description">A living document of architectural heritage, historic preservation, and the ongoing story of Santa Fe's Prairie-style adobe house. This project demonstrates the importance of continuous documentation in historic preservation and the value of maintaining architectural diversity in our historic neighborhoods.</p>
+            <p style="margin-top: 30px; color: #999; font-size: 0.9em;">© 2025 Historic Preservation Documentation Project</p>
+        </div>
+    </footer>
+    
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Remove active class from all nav links
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Add active class to clicked nav link
+            document.querySelector(`[onclick="showSection('${sectionId}')"]`).classList.add('active');
+            
+            // Scroll to top of content
+            document.querySelector('.nav').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // Initialize first section as active
+        document.addEventListener('DOMContentLoaded', function() {
+            showSection('overview');
+        });
+        
+        // Add some interactive enhancements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate progress bars when they come into view
+            const progressBars = document.querySelectorAll('.progress-bar-fill');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const bar = entry.target;
+                        const width = bar.style.width;
+                        bar.style.width = '0';
+                        setTimeout(() => {
+                            bar.style.width = width;
+                        }, 200);
+                    }
+                });
+            });
+            
+            progressBars.forEach((bar) => {
+                observer.observe(bar);
+            });
+        });
+    </script>
+</body>
+</html>

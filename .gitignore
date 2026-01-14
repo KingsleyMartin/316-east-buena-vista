@@ -1,0 +1,73 @@
+# Operating System Files
+desktop.ini
+Thumbs.db
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+
+# Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+
+# Backup Files
+*.bak
+*.backup
+*-bck.*
+*_backup.*
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependencies (if you add build tools)
+node_modules/
+bower_components/
+vendor/
+
+# Build Output (if you add build tools)
+dist/
+build/
+.cache/
+.parcel-cache/
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+
+# Testing
+coverage/
+.nyc_output/
+
+# Temporary Files
+*.tmp
+.temp/
+temp/
+
+# Archives
+*.zip
+*.tar
+*.gz
+*.7z
+*.rar
+
+# Media (optional - uncomment if not tracking originals)
+# photos-originals/
+# *.psd
+# *.ai
+
+# Documents (optional - uncomment if sensitive)
+# documents/
+
+# Configuration (optional)
+# config.local.js

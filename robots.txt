@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Disallow administrative or development files
+Disallow: /documents/
+Disallow: /photos-originals/
+Disallow: /*.kmz$
+
+# Sitemap location
+Sitemap: https://316eastbuenavista.com/sitemap.xml

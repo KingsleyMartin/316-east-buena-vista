@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <style>
+      .adobe { fill: #b8860b; }
+      .roof { fill: #9a7209; }
+      .window { fill: #fff; }
+      .bg { fill: #2d2d2d; }
+    </style>
+  </defs>
+  <!-- Background circle -->
+  <circle class="bg" cx="50" cy="50" r="48"/>
+  <!-- Prairie-style house silhouette -->
+  <!-- Main adobe structure -->
+  <rect class="adobe" x="25" y="45" width="50" height="35" rx="1"/>
+  <!-- Low-pitched roof -->
+  <polygon class="roof" points="20,45 80,45 75,35 25,35"/>
+  <!-- Horizontal emphasis lines -->
+  <rect class="roof" x="20" y="50" width="60" height="1.5"/>
+  <rect class="roof" x="20" y="65" width="60" height="1.5"/>
+  <!-- Windows -->
+  <rect class="window" x="32" y="53" width="8" height="10" rx="0.5"/>
+  <rect class="window" x="46" y="53" width="8" height="10" rx="0.5"/>
+  <rect class="window" x="60" y="53" width="8" height="10" rx="0.5"/>
+  <rect class="window" x="39" y="68" width="7" height="10" rx="0.5"/>
+  <rect class="window" x="54" y="68" width="7" height="10" rx="0.5"/>
+</svg>
