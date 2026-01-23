@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garden 3D Model - 316 East Buena Vista Street</title>
+    <meta name="description" content="Interactive 3D model of the historic garden layout and site plan.">
+
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <meta property="og:title" content="Garden 3D Model - 316 East Buena Vista">
+    <meta property="og:description" content="Interactive 3D model of the historic garden layout and site plan.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+
+    <link rel="stylesheet" href="cs/common.css">
+    <style>
+        .model-panel {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.08);
+            border: 1px solid #f0f0f0;
+        }
+
+        .model-frame {
+            width: 100%;
+            height: 75vh;
+            min-height: 520px;
+            border: 0;
+            display: block;
+        }
+
+        .model-caption {
+            padding: 20px 24px;
+            color: #666;
+            font-size: 0.98em;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .model-frame {
+                height: 60vh;
+                min-height: 420px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="nav-placeholder"></div>
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Garden 3D Model</h1>
+            <p class="hero-subtitle">Explore the site plan in an interactive 3D view to understand layout, circulation, and spatial relationships.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Interactive Model</h2>
+                <p class="section-subtitle">Use pan, zoom, and rotate controls to examine the garden layout.</p>
+            </div>
+
+            <div class="model-panel">
+                <iframe
+                    class="model-frame"
+                    src="https://kingsleymartin.github.io/garden-3d/"
+                    title="Garden 3D Model"
+                    loading="lazy"
+                    allowfullscreen
+                    referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+                <div class="model-caption">If the model does not load, open it directly at <a href="https://kingsleymartin.github.io/garden-3d/" target="_blank" rel="noopener noreferrer">kingsleymartin.github.io/garden-3d</a>.</div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <h3 class="footer-title">316 East Buena Vista Street</h3>
+            <p class="footer-description">A living document of architectural heritage, historic preservation, and the ongoing story of Santa Fe's Prairie-style adobe house.</p>
+            <p class="footer-copyright">© 2025 Historic Preservation Documentation Project</p>
+        </div>
+    </footer>
+
+    <script src="js/navigation.js"></script>
+</body>
+</html>

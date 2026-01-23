@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Historic Prairie Adobe House Documentation Project",
   "scripts": {
-    "dev": "python -m http.server 8000",
-    "start": "python -m http.server 8000"
+    "dev": "python -m http.server 8080 --bind 127.0.0.1",
+    "start": "python -m http.server 8080 --bind 127.0.0.1"
   },
   "keywords": [
     "historic-preservation",
