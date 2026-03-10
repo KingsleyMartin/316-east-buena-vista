@@ -22,7 +22,8 @@ const navConfig = {
                 { href: 'water-systems.html', label: 'Well & Water Rights' },
                 { href: 'flowering-calendar.html', label: 'Flowering Calendar' },
                 { href: 'garden-3d-model.html', label: '3d Model' },
-                { href: 'garden-plan (no install costs).html', label: 'Garden Plan' }
+                { href: 'garden-plan.html', label: 'Garden Plan' },
+                { href: 'garden-plan (no install costs).html', label: 'Irrigation Plan' }
             ]
         },
         { href: 'sales.html', label: 'Sales History' },
